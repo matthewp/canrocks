@@ -16,6 +16,11 @@
         <home-page></home-page>
       </can-import>
     {{/eq}}
+    {{#eq page "search"}}
+      <can-import from="canrocks/search/search.component!" can-tag="loading">
+        <search-results search-term="{searchTerm}"></search-results>
+      </can-import>
+    {{/eq}}
 
     {{asset "inline-cache"}}
 

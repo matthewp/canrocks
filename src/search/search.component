@@ -1,0 +1,6 @@
+<can-component tag="search-results">
+  <template>
+    <p>{{message}}</p>
+  </template>
+  <view-model from="canrocks/search/search"></view-model>
+</can-component>

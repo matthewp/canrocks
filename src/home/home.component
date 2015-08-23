@@ -1,11 +1,15 @@
 <can-component tag="home-page">
   <style>
     home-page p {
-      color: blue;
     }
   </style>
   <template>
     <p>{{message}}</p>
+
+    <form class="search-form" can-submit="doSearch">
+      <input type="text" placeholder="search" can-value="{searchTerm}" />
+      <input type="submit" />
+    </form>
   </template>
   <script type="view-model">
     var Map = require("can/map/");
@@ -15,7 +19,17 @@
       define: {
         message: {
           value: 'This is the home-page component'
+        },
+        searchTerm: {
+          value: "tabs"
         }
+      },
+      doSearch: function() {
+        this.attr("@root").attr({
+          page: "search",
+          searchTerm: this.attr("searchTerm")
+        });
+        return false;
       }
     });
   </script>
