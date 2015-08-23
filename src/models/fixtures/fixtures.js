@@ -1,0 +1,2 @@
+define(["can-connect/fixture/"]);
+

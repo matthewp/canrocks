@@ -1,0 +1,9 @@
+<can-component tag="loading">
+  <template>
+    {{#eq state "resolved"}}
+      <content/>
+    {{else}}
+      <span>loading</span>
+    {{/eq}}
+  </template>
+</can-component>

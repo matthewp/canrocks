@@ -1,0 +1,62 @@
+{
+  "name": "canrocks",
+  "version": "0.0.0",
+  "description": "can.component rocks",
+  "homepage": "",
+  "author": {
+    "name": "Matthew Phillips",
+    "email": "matthew@matthewphillips.info",
+    "url": ""
+  },
+  "scripts": {
+    "test": "testee test.html --browsers firefox --reporter Spec --root http://localhost:8080",
+    "start": "can-serve --port 8080",
+    "live-reload": "steal-tools live-reload",
+    "develop": "npm start & npm run live-reload",
+    "document": "documentjs"
+  },
+  "main": "canrocks/index.stache!done-autorender",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "canjs",
+    "donejs"
+  ],
+  "system": {
+    "main": "canrocks/index.stache!done-autorender",
+    "directories": {
+      "lib": "src"
+    },
+    "configDependencies": [
+      "live-reload"
+    ],
+    "npmIgnore": [
+      "documentjs",
+      "testee",
+      "donejs-deploy",
+      "yeoman-environment",
+      "generator-donejs"
+    ]
+  },
+  "dependencies": {
+    "can": "^2.3.0-pre.8",
+    "can-connect": "^0.2.7",
+    "can-ssr": "^0.5.5",
+    "done-autorender": "^0.3.1",
+    "done-component": "^0.1.0",
+    "done-css": "^1.1.6",
+    "generator-donejs": "^0.2.9",
+    "jquery": "^2.1.4",
+    "steal": "^0.11.0-pre.6",
+    "yeoman-environment": "^1.2.7"
+  },
+  "devDependencies": {
+    "documentjs": "^0.3.0",
+    "donejs-deploy": "^0.1.5",
+    "funcunit": "^3.0.0",
+    "steal-qunit": "^0.1.1",
+    "steal-tools": "^0.11.0-pre.9",
+    "testee": "^0.2.0"
+  }
+}

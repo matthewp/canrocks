@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>{{title}}</title>
+    {{asset "css"}}
+  </head>
+  <body>
+    <can-import from="canrocks/styles.less!" />
+    <can-import from="canrocks/app" as="viewModel" />
+    <can-import from="canrocks/routes" />
+    <can-import from="canrocks/loading.component!" />
+
+    <h1>{{message}}</h1>
+
+    {{#eq page "home"}}
+      <can-import from="canrocks/home/home.component!" can-tag="loading">
+        <home-page></home-page>
+      </can-import>
+    {{/eq}}
+
+    {{asset "inline-cache"}}
+
+    {{#switch @env.NODE_ENV}}
+      {{#case "production"}}
+        <script src="/node_modules/steal/steal.production.js"  main="canrocks/index.stache!done-autorender"></script>
+      {{/case}}
+      {{#default}}
+        <script src="/node_modules/steal/steal.js"></script>
+      {{/default}}
+    {{/switch}}
+  </body>
+</html>

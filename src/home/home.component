@@ -1,0 +1,22 @@
+<can-component tag="home-page">
+  <style>
+    home-page p {
+      color: blue;
+    }
+  </style>
+  <template>
+    <p>{{message}}</p>
+  </template>
+  <script type="view-model">
+    var Map = require("can/map/");
+    require("can/map/define/");
+
+    module.exports = Map.extend({
+      define: {
+        message: {
+          value: 'This is the home-page component'
+        }
+      }
+    });
+  </script>
+</can-component>
