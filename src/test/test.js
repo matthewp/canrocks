@@ -1,4 +1,3 @@
-import QUnit from 'steal-qunit';
+require("steal-qunit");
 
-import 'canrocks/models/test';
-import 'canrocks/test/smoke';
+require("canrocks/models/test");

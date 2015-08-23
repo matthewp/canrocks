@@ -1,2 +1,4 @@
-define(["can-connect/fixture/"]);
-
+define([
+  "can-connect/fixture/",
+  "canrocks/models/fixtures/component"
+]);

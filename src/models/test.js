@@ -1,1 +1,4 @@
-define(["./fixtures/"]);
+define([
+  "./fixtures/",
+  "canrocks/models/component_test"
+]);
