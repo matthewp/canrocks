@@ -27,7 +27,7 @@
       doSearch: function() {
         this.attr("@root").attr({
           page: "search",
-          searchTerm: this.attr("searchTerm")
+          query: this.attr("searchTerm")
         });
         return false;
       }

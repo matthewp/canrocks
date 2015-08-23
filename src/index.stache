@@ -8,8 +8,11 @@
     <can-import from="canrocks/app" as="viewModel" />
     <can-import from="canrocks/routes" />
     <can-import from="canrocks/loading.component!" />
+    <can-import from="can/view/href/" />
 
-    <h1>{{message}}</h1>
+    <a can-href="{page: 'home'}">
+      <h1>{{message}}</h1>
+    </a>
 
     {{#eq page "home"}}
       <can-import from="canrocks/home/home.component!" can-tag="loading">
@@ -18,7 +21,7 @@
     {{/eq}}
     {{#eq page "search"}}
       <can-import from="canrocks/search/search.component!" can-tag="loading">
-        <search-results search-term="{searchTerm}"></search-results>
+        <search-results search-term="{query}"></search-results>
       </can-import>
     {{/eq}}
 
