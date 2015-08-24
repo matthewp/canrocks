@@ -4,7 +4,19 @@ var tag = require("can-connect/can/tag/");
 require("can/map/define/");
 
 var Component = exports.Component = can.Map.extend({
-  define: {}
+  define: {
+    version: {
+      get: function(){
+        return this.attr("dist-tags.latest") || this.attr("versions");
+      }
+    },
+    owners: {
+      set: function(val){
+        this.attr("primaryOwner", val.attr(0));
+        return val;
+      }
+    }
+  }
 });
 
 Component.List = can.List.extend({
@@ -13,7 +25,7 @@ Component.List = can.List.extend({
 
 var componentConnection = exports.componentConnection = superMap({
   url: '/api/component',
-  idProp: 'id',
+  idProp: 'name',
   Map: Component,
   List: Component.List,
   name: 'component'

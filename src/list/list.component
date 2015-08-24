@@ -1,0 +1,52 @@
+<can-component tag="component-list">
+  <style>
+    component-list .components {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    component-list .component header h1,
+    component-list .component header h4 {
+      display: inline-block;
+    }
+    component-list .component-name {
+      margin-right: 15px;
+    }
+    component-list .component .version {
+      text-align: right;
+    }
+  </style>
+  <template>
+    <can-import from="canrocks/models/component" />
+    <can-import from="can/view/href/" />
+
+    <component-model get-list="{type:'top'}">
+      <ul class="components">
+      {{#each ./value}}
+        <li class="component">
+          <header>
+            <a can-href="{page='components', package=name}" class="component-name">
+              <h1>{{name}}</h1>
+            </a>
+            <h4>{{primaryOwner}}</h4>
+          </header>
+          <div class="description">{{description}}</div>
+          <div class="version">{{version}}</div>
+        </li>
+      {{/each}}
+      </ul>
+    </component-model>
+  </template>
+  <script type="view-model">
+    var Map = require("can/map/");
+    require("can/map/define/");
+
+    module.exports =  Map.extend({
+      define: {
+        limit: {
+          type: "number",
+          value: 5
+        }
+      }
+    });
+  </script>
+</can-component>

@@ -36,8 +36,14 @@
       "testee",
       "donejs-deploy",
       "yeoman-environment",
-      "generator-donejs"
+      "generator-donejs",
+      "npm",
+      "lowdb",
+      "lodash.some"
     ]
+  },
+  "canrocks": {
+    "database": "components.db"
   },
   "dependencies": {
     "can": "^2.3.0-pre.8",
@@ -48,6 +54,9 @@
     "done-css": "^1.1.6",
     "generator-donejs": "^0.2.9",
     "jquery": "^2.1.4",
+    "lodash.some": "^3.2.3",
+    "lowdb": "^0.10.2",
+    "npm": "^2.14.0",
     "steal": "^0.11.0-pre.6",
     "yeoman-environment": "^1.2.7"
   },

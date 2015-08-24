@@ -1,0 +1,22 @@
+<title>&lt;component-list&gt;</title>
+<script type="text/stache" can-autorender>
+  <can-import from="canrocks/models/fixtures/" />
+  <can-import from="canrocks/list/list.component!" />
+  <can-import from="canrocks/styles.less!" />
+  <div id="app">
+    <component-list></component-list>
+  </div>
+</script>
+<script src="../../node_modules/steal/steal.js" live-reload="false"
+        main="can/view/autorender/">
+</script>
+<style>
+  #app {
+    display: flex;
+    justify-content: center;
+  }
+
+  component-list {
+    width: 60%;
+  }
+</style>

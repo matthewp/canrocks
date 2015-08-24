@@ -1,0 +1,25 @@
+<can-component tag="component-page">
+  <template>
+    <can-import from="canrocks/models/component" />
+
+    <p>hello {{packageName}}</p>
+
+    <component-model get="{name=packageName}">
+      {{value.name}}
+
+      {{value.description}}
+    </component-model>
+  </template>
+  <script type="view-model">
+    var Map = require("can/map/");
+    require("can/map/define/");
+
+    module.exports = Map.extend({
+      define: {
+        packageName: {
+          type: "string"
+        }
+      }
+    });
+  </script>
+</can-component>

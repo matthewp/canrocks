@@ -1,0 +1,17 @@
+html {
+  display: flex;
+  justify-content: center;
+  background: #FEFFF8;
+  color: #273C52;
+}
+
+body {
+  font-family: "Helvetica Neue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-weight: 300;
+  width: 60%;
+}
+
+body a {
+  text-decoration: none;
+  color: #77A388;
+}

@@ -1,0 +1,44 @@
+{
+  "components": [
+    {
+      "name": "can-lorem-ipsum",
+      "description": "A can.Component for lorem ipsum text",
+      "dist-tags": {
+        "latest": "1.0.0"
+      },
+      "versions": "1.0.0",
+      "maintainers": "matthewp <matthew@matthewphillips.info>",
+      "time": {
+        "modified": "2015-08-23T14:30:51.489Z",
+        "created": "2015-08-23T14:30:51.489Z",
+        "1.0.0": "2015-08-23T14:30:51.489Z"
+      },
+      "homepage": "https://github.com/matthewp/lorem-ipsum",
+      "keywords": [
+        "canjs",
+        "can-component"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/matthewp/lorem-ipsum.git"
+      },
+      "author": "Matthew Phillips",
+      "bugs": {
+        "url": "https://github.com/matthewp/lorem-ipsum/issues"
+      },
+      "license": "MIT",
+      "readmeFilename": "README.md",
+      "version": "1.0.0",
+      "main": "component/lorem.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "gitHead": "a770a3907c122630c4b93a14955f80587a067970",
+      "dist": {
+        "shasum": "5160330f66b4dd3e09922790447fa63800da8835",
+        "tarball": "http://registry.npmjs.org/can-lorem-ipsum/-/can-lorem-ipsum-1.0.0.tgz"
+      },
+      "directories": {}
+    }
+  ]
+}

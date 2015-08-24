@@ -1,14 +1,15 @@
 <can-component tag="home-page">
   <style>
-    home-page p {
+    home-page .search-term {
+      width: 60%;
+      height: 35px;
+      font-size: 30px;
     }
   </style>
   <template>
-    <p>{{message}}</p>
-
     <form class="search-form" can-submit="doSearch">
-      <input type="text" placeholder="search" can-value="{searchTerm}" />
-      <input type="submit" />
+      <input class="search-term" type="text" placeholder="keywords" can-value="{searchTerm}" />
+      <input class="submit-button" type="submit" />
     </form>
   </template>
   <script type="view-model">
@@ -17,11 +18,8 @@
 
     module.exports = Map.extend({
       define: {
-        message: {
-          value: 'This is the home-page component'
-        },
         searchTerm: {
-          value: "tabs"
+          value: ""
         }
       },
       doSearch: function() {

@@ -1,6 +1,19 @@
 <can-component tag="search-results">
+  <style>
+    search-results .search-info {
+      font-style: italic;
+      text-align: right;
+    }
+    search-results .search-term {
+      font-weight: bold;
+    }
+  </style>
   <template>
-    <p>{{message}}</p>
+    <can-import from="canrocks/list/list.component!" />
+
+    <p class="search-info">results for: <span class="search-term">{{searchTerm}}</span></p>
+
+    <component-list></component-list>
   </template>
   <view-model from="canrocks/search/search"></view-model>
 </can-component>

@@ -1,11 +1,26 @@
-import fixture from 'can-connect/fixture/';
+var fixture = require("can-connect/fixture/");
 
-const store = fixture.store([{
-  id: 0,
-  description: 'First item'
+var store = fixture.store([{
+  name: 'bit-tabs',
+  owners: ["matthewp"],
+  description: "A basic tabs component",
+  "dist-tags": {
+    "latest": "0.1.0"
+  }
 }, {
-  id: 1,
-  description: 'Second item'
+  name: 'bit-grid',
+  owners: ["matthewp"],
+  description: "A set of components for grids",
+  "dist-tags": {
+    "latest": "0.5.0"
+  }
+}, {
+  name: "can-lorem-ipsum",
+  owners: ["matthewp"],
+  description: "A can.Component for lorem ipsum text",
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
 }]);
 
 fixture({
@@ -16,5 +31,4 @@ fixture({
   'DELETE /api/component/{id}': store.destroy
 });
 
-export default store;
-
+module.exports = store;

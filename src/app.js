@@ -4,13 +4,19 @@ var loader = require("@loader");
 
 var AppViewModel = AppMap.extend({
   define: {
-    message: {
-      value: 'CanJS Components Rocks!',
+    siteName: {
+      value: 'canjs.rocks',
       serialize: false
     },
     title: {
-      value: 'can.Components',
+      value: 'canjs.rocks',
       serialize: false
+    },
+    query: {
+      type: "string"
+    },
+    page: {
+      type: "string"
     }
   }
 });
