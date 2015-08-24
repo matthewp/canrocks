@@ -2,12 +2,17 @@
   <template>
     <can-import from="canrocks/models/component" />
 
-    <p>hello {{packageName}}</p>
-
     <component-model get="{name=packageName}">
-      {{value.name}}
+      {{#isResolved}}
+      <aside>
+        <code><pre>npm install {{value.name}}</pre></code>
+      </aside>
+      <div class="information">
+        {{value.name}}
 
-      {{value.description}}
+        {{value.description}}
+      </div>
+      {{/isResolved}}
     </component-model>
   </template>
   <script type="view-model">
