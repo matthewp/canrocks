@@ -1,11 +1,16 @@
 <can-component tag="component-page">
+  <style>
+    component-page aside {
+      display: inline-block;
+    }
+  </style>
   <template>
     <can-import from="canrocks/models/component" />
 
     <component-model get="{name=packageName}">
       {{#isResolved}}
       <aside>
-        <code><pre>npm install {{value.name}}</pre></code>
+        <code><pre>npm install {{value.name}} --save</pre></code>
       </aside>
       <div class="information">
         {{value.name}}

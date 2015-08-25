@@ -1,17 +1,40 @@
 html {
-  display: flex;
-  justify-content: center;
-  background: #FEFFF8;
+  background-color: #FEFFF8;
   color: #273C52;
 }
 
 body {
   font-family: "Helvetica Neue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   font-weight: 300;
+  margin: 0;
+}
+
+main {
+  margin: auto;
   width: 60%;
 }
 
-body a {
+#page-nav {
+  height: 38px;
+  background: #3FA369;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0 10em;
+}
+
+#page-nav a {
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  padding: 0 0.5em;
+}
+
+#page-nav a:hover {
+  background: #2f794e;
+  color #fff;
+}
+
+a {
+  color: #3FA369;
   text-decoration: none;
-  color: #77A388;
 }

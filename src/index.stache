@@ -1,37 +1,42 @@
 <html>
   <head>
     <title>{{title}}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     {{asset "css"}}
   </head>
   <body>
-    <!-- REMOVE THIS -->
-    <can-import from="canrocks/models/fixtures/" />
+    <nav id="page-nav">
+      <a can-href="{page: 'help'}">Help</a>
+      <a can-href="{page: 'register'}">Register Component</a>
+    </nav>
 
-    <can-import from="canrocks/styles.css!" />
-    <can-import from="canrocks/app" as="viewModel" />
-    <can-import from="canrocks/routes" />
-    <can-import from="canrocks/loading.component!" />
-    <can-import from="can/view/href/" />
+    <main>
+      <can-import from="canrocks/styles.css!" />
+      <can-import from="canrocks/app" as="viewModel" />
+      <can-import from="canrocks/routes" />
+      <can-import from="canrocks/loading.component!" />
+      <can-import from="can/view/href/" />
 
-    <a can-href="{page: 'home'}">
-      <h1>{{siteName}}</h1>
-    </a>
+      <a can-href="{page: 'home'}">
+        <h1>{{siteName}}</h1>
+      </a>
 
-    {{#eq page "home"}}
-      <can-import from="canrocks/home/home.component!" can-tag="loading">
-        <home-page></home-page>
-      </can-import>
-    {{/eq}}
-    {{#eq page "search"}}
-      <can-import from="canrocks/search/search.component!" can-tag="loading">
-        <search-results search-term="{query}"></search-results>
-      </can-import>
-    {{/eq}}
-    {{#eq page "components"}}
-      <can-import from="canrocks/component/component.component!" can-tag="loading">
-        <component-page package-name="{package}"></component-page>
-      </can-import>
-    {{/eq}}
+      {{#eq page "home"}}
+        <can-import from="canrocks/home/home.component!" can-tag="loading">
+          <home-page></home-page>
+        </can-import>
+      {{/eq}}
+      {{#eq page "search"}}
+        <can-import from="canrocks/search/search.component!" can-tag="loading">
+          <search-results search-term="{query}"></search-results>
+        </can-import>
+      {{/eq}}
+      {{#eq page "components"}}
+        <can-import from="canrocks/component/component.component!" can-tag="loading">
+          <component-page package-name="{package}"></component-page>
+        </can-import>
+      {{/eq}}
+    </main>
 
     {{asset "inline-cache"}}
 
