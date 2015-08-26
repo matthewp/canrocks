@@ -10,13 +10,14 @@
     <component-model get="{name=packageName}">
       {{#isResolved}}
       <aside>
-        <code><pre>npm install {{value.name}} --save</pre></code>
+        <pre><code class="bash">npm install {{value.name}} --save</code></pre>
       </aside>
       <div class="information">
         {{value.name}}
 
         {{value.description}}
       </div>
+      {{setComponent value}}
       {{/isResolved}}
     </component-model>
   </template>
@@ -28,8 +29,26 @@
       define: {
         packageName: {
           type: "string"
+        },
+        component: {
+          value: null
         }
+      },
+      setComponent: function(val){
+        this.attr("component", val.isComputed ? val() : val);
       }
     });
+  </script>
+  <script type="events">
+    var hl = require("canrocks/highlight");
+
+    exports.componentChange = function(){
+      var element = this.element;
+      requestAnimationFrame(function(){
+        hl.highlightChildren(element);
+      });
+    };
+
+    exports["{viewModel} component"] = "componentChange";
   </script>
 </can-component>

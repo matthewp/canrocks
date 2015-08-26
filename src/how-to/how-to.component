@@ -1,0 +1,41 @@
+<can-component tag="how-to">
+  <style>
+  </style>
+  <template>
+    <can-import from="can/view/href/" />
+    <can-import from="canrocks/highlight" />
+
+    <h1>How to use</h1>
+    <p><a can-href="{page='home'}">canjs.rocks</a> is a collection of can.Components for use in your projects. Every component listed on this site is installable with <a href="https://www.npmjs.com/">npm</a>. Instructions for installing are listed on the component's page.</p>
+    <p>For example <a can-href="{page='components', package='can-lorem-ipsum'}">can-lorem-ipsum</a> can be installed with:</p>
+    <pre><code class="bash">npm install can-lorem-ipsum --save</code></pre>
+    <p>And then used in your project with <a href="http://donejs.com/">donejs</a>:</p>
+    <pre><code class="html">&lt;can-import from="can-lorem-ipsum" /&gt;
+
+&lt;lorem-ipsum times="50"&gt;&lt;/lorem-ipsum&gt;</code></pre>
+
+    <h1>How to contribute</h1>
+    <p>Our database is built by crawling <a href="https://www.npmjs.com">npm</a> for packages with the keywords <strong><code>can-component</code></strong> or <strong><code>cancomponent</code></strong>.</p>
+    <p>So the best way to contribute is by submitting can.Components to npm, it's easy to do. First create a project with a component; let's say it is in <code>tabs.js</code>, you would make your package.json look like this:</p>
+    <pre><code class="json">{
+  "name": "my-tabs",
+  "version": "1.0.0",
+  "main": "tabs.js",
+  "keywords": [
+    "can-component"
+  ],
+  ...
+}</code></pre>
+  <p>You should use source control like <a href="https://github.com/">GitHub</a> and do good practices like testing and Continuous Integration. Once your project is ready to be shared simply type:</p>
+  <pre><code class="bash">npm publish</code></pre>
+  <p>canjs.rocks crawls npm every few hours and picks up new packages that were published. If you don't want to wait that long you can go to the <a can-href="{page='register'}">register page</a> to notify us of your package and it should be added to our database immediately.</p>
+  </template>
+  <script type="view-model"></script>
+  <script type="events">
+    var hl = require("canrocks/highlight");
+
+    exports.inserted = function(){
+      hl.highlightChildren(this.element);
+    };
+  </script>
+</can-component>

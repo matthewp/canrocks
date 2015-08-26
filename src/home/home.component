@@ -4,6 +4,9 @@
     <can-import from="canrocks/models/component" />
 
     <section>
+      <div class="site-description">
+        <h4>Cataloging {{count}} of can.Components</h4>
+      </div>
       <div class="form-content">
         <form class="search-form" can-submit="doSearch">
           <input class="search-term" type="text" placeholder="find components" can-value="{searchTerm}" />
@@ -25,6 +28,9 @@
       define: {
         searchTerm: {
           value: ""
+        },
+        count: {
+          value: "thousands"
         }
       },
       doSearch: function() {
@@ -44,7 +50,8 @@
     home-page section {
       width: 100%;
     }
-    home-page .form-content {
+    home-page .form-content,
+    home-page .site-description {
       display: flex;
       justify-content: center;
     }

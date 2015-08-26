@@ -36,6 +36,11 @@
           <component-page package-name="{package}"></component-page>
         </can-import>
       {{/eq}}
+      {{#eq page "how-to"}}
+        <can-import from="canrocks/how-to/how-to.component!" can-tag="loading">
+          <how-to></how-to>
+        </can-import>
+      {{/eq}}
     </main>
 
     {{asset "inline-cache"}}

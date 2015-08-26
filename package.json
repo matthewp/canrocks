@@ -59,6 +59,7 @@
     "done-css": "^1.1.6",
     "express": "^4.13.3",
     "generator-donejs": "^0.2.9",
+    "highlight.js": "^8.7.0",
     "jquery": "^2.1.4",
     "lodash.some": "^3.2.3",
     "lowdb": "^0.10.2",

@@ -15,6 +15,7 @@
 
     <p class="search-info">results for: <span class="search-term">{{searchTerm}}</span></p>
 
+    {{#if query}}
     <component-model get-list="{query=query}">
       <component-list promise="{.}"></component-list>
       {{#if isResolved}}
@@ -26,6 +27,7 @@
         {{/if}}
       {{/if}}
     </component-model>
+    {{/if}}
   </template>
   <view-model from="canrocks/search/search"></view-model>
 </can-component>
