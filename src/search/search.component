@@ -10,10 +10,22 @@
   </style>
   <template>
     <can-import from="canrocks/list/list.component!" />
+    <can-import from="canrocks/models/component" />
+    <can-import from="can/view/href/" />
 
     <p class="search-info">results for: <span class="search-term">{{searchTerm}}</span></p>
 
-    <component-list></component-list>
+    <component-model get-list="{query=query}">
+      <component-list promise="{.}"></component-list>
+      {{#if isResolved}}
+        {{^if ./value.length}}
+          <div class="no-results">
+            <p>No results found for <strong>{{query}}</strong> :(</p>
+            <p>Maybe you should <a can-href="{page='how-to'}">Submit a component</a>?</p>
+          </div>
+        {{/if}}
+      {{/if}}
+    </component-model>
   </template>
   <view-model from="canrocks/search/search"></view-model>
 </can-component>

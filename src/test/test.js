@@ -1,8 +1,5 @@
 require("steal-qunit");
 
 require("canrocks/models/test");
-
-
-import 'canrocks/list/list_test';
-
-import 'canrocks/component/component_test';
+require("canrocks/list/list_test");
+require("canrocks/search/search_test");

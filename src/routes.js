@@ -5,6 +5,7 @@ route(":page", { page: "home", query: null });
 route(":page/:package");
 
 var env = require("@loader").env;
-if(env === "development" && location.port != 8080) {
+var ports = { 8080: true, 3030: true };
+if(env === "development" && !ports[location.port]) {
   route.defaultBinding = "hashchange";
 }

@@ -1,6 +1,8 @@
 <can-component tag="home-page">
   <template>
     <can-import from="canrocks/list/list.component!" />
+    <can-import from="canrocks/models/component" />
+
     <section>
       <div class="form-content">
         <form class="search-form" can-submit="doSearch">
@@ -9,7 +11,10 @@
         </form>
       </div>
       <h1>Trending</h1>
-      <component-list></component-list>
+
+      <component-model get-list="{type='top'}">
+        <component-list promise="{.}"></component-list>
+      </component-model>
     </section>
   </template>
   <script type="view-model">

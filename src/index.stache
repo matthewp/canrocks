@@ -6,8 +6,8 @@
   </head>
   <body>
     <nav id="page-nav">
-      <a can-href="{page: 'help'}">Help</a>
-      <a can-href="{page: 'register'}">Register Component</a>
+      <a can-href="{page='how-to'}">Help</a>
+      <a can-href="{page='register'}">Register Component</a>
     </nav>
 
     <main>
@@ -17,7 +17,7 @@
       <can-import from="canrocks/loading.component!" />
       <can-import from="can/view/href/" />
 
-      <a can-href="{page: 'home'}">
+      <a can-href="{page='home'}">
         <h1>{{siteName}}</h1>
       </a>
 

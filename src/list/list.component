@@ -16,25 +16,22 @@
     }
   </style>
   <template>
-    <can-import from="canrocks/models/component" />
     <can-import from="can/view/href/" />
 
-    <component-model get-list="{type:'top'}">
-      <ul class="components">
-      {{#each ./value}}
-        <li class="component">
-          <header>
-            <a can-href="{page='components', package=name}" class="component-name">
-              <h1>{{name}}</h1>
-            </a>
-            <h4>{{primaryOwner}}</h4>
-          </header>
-          <div class="description">{{description}}</div>
-          <div class="version">{{version}}</div>
-        </li>
-      {{/each}}
-      </ul>
-    </component-model>
+    <ul class="components">
+    {{#each promise.value}}
+      <li class="component">
+        <header>
+          <a can-href="{page='components', package=name}" class="component-name">
+            <h1>{{name}}</h1>
+          </a>
+          <h4>{{primaryOwner}}</h4>
+        </header>
+        <div class="description">{{description}}</div>
+        <div class="version">{{version}}</div>
+      </li>
+    {{/each}}
+    </ul>
   </template>
   <script type="view-model">
     var Map = require("can/map/");
@@ -45,6 +42,9 @@
         limit: {
           type: "number",
           value: 5
+        },
+        promise: {
+          value: null
         }
       }
     });

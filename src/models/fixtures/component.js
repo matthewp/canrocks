@@ -21,7 +21,12 @@ var store = fixture.store([{
   "dist-tags": {
     "latest": "1.0.0"
   }
-}]);
+}], function(item, req){
+  var query = req.data.query;
+  if(query === "all") return true;
+  var exp = new RegExp(query, "gi");
+  return exp.test(item.name) || exp.test(item.description);
+});
 
 fixture({
   'GET /api/component': store.findAll,
