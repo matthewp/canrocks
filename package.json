@@ -43,13 +43,16 @@
       "lodash.some",
       "express",
       "compression",
-      "xmlhttprequest"
+      "xmlhttprequest",
+      "body-parser",
+      "pdenodeify"
     ]
   },
   "canrocks": {
     "database": "components.db"
   },
   "dependencies": {
+    "body-parser": "^1.13.3",
     "can": "^2.3.0-pre.8",
     "can-connect": "^0.2.7",
     "can-ssr": "^0.5.5",
@@ -64,6 +67,7 @@
     "lodash.some": "^3.2.3",
     "lowdb": "^0.10.2",
     "npm": "^2.14.0",
+    "pdenodeify": "^0.1.0",
     "steal": "^0.11.0-pre.6",
     "xmlhttprequest": "^1.7.0",
     "yeoman-environment": "^1.2.7"

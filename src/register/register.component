@@ -1,0 +1,60 @@
+<can-component tag="register-component">
+  <template>
+    <h1>Register your component</h1>
+    <p>If you haven't already, please publish your component to <a href="https://www.npmjs.com/">npm</a>. Doing so should cause your component to show up on the site within a few hours. If it doesn't please fill out the below form and it should appear immediately.</p>
+    {{^if saved}}
+    <form class="register-form" can-submit="register">
+      <label for="package" {{#if error}}class="error"{{/if}}>
+      <input type="text" name="package" can-value="packageName" placeholder="package name" />
+      </label>
+      {{#if error}}
+        <span class="error-message">{{error}}</span>
+      {{/if}}
+      <input type="submit" value="Submit" />
+    </form>
+    {{else}}
+      <div class="submitted">Thanks for submitting <strong>{{packageName}}</strong>! It should appear on the site shortly.</div>
+      <div><a href="javascript://" can-click="reset">Submit another?</a></div>
+    {{/if}}
+  </template>
+  <script type="view-model">
+    var Map = require("can/map/");
+    require("can/map/define/");
+    var Component = require("canrocks/models/component").Component;
+
+    module.exports = Map.extend({
+      define: {
+        packageName: {
+          type: "string"
+        }
+      },
+      register: function(){
+        if(this.validate()) {
+          // TODO submit it
+          var component = new Component({
+            packageName: this.attr("packageName")
+          });
+          component.save();
+          this.attr("saved", true);
+        }
+
+        return false;
+      },
+      validate: function(){
+        var packageName = this.attr("packageName");
+        if(!packageName) {
+          this.attr("error", "Please provide a package name.");
+          return false;
+        }
+        return true;
+      },
+      reset: function(){
+        this.attr({
+          packageName: undefined,
+          error: undefined,
+          saved: false
+        });
+      }
+    });
+  </script>
+</can-component>

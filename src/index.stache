@@ -41,6 +41,11 @@
           <how-to></how-to>
         </can-import>
       {{/eq}}
+      {{#eq page "register"}}
+        <can-import from="canrocks/register/register.component!" can-tag="loading">
+          <register-component><register-component>
+        </can-import>
+      {{/eq}}
     </main>
 
     {{asset "inline-cache"}}
