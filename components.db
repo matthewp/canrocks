@@ -38,7 +38,8 @@
         "shasum": "5160330f66b4dd3e09922790447fa63800da8835",
         "tarball": "http://registry.npmjs.org/can-lorem-ipsum/-/can-lorem-ipsum-1.0.0.tgz"
       },
-      "directories": {}
+      "directories": {},
+      "readme": "# <lorem-ipsum>\n\nUse lorem ipsum text in your demo pages:\n\n```html\n<lorem-ipsum times=\"50\"></lorem-ipsum>\n```\n\nThat's the entire API.\n\n## Licence\n\nMIT\n"
     }
   ]
 }

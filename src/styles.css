@@ -13,6 +13,9 @@ main {
   margin: auto;
   width: 60%;
 }
+main.wide-mode {
+  width: 95%;
+}
 
 #page-nav {
   height: 38px;

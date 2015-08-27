@@ -7,3 +7,5 @@ require("canrocks/how-to/how-to_test");
 
 
 import 'canrocks/register/register_test';
+
+import 'canrocks/markdown/markdown_test';

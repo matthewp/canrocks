@@ -10,7 +10,7 @@
       <a can-href="{page='register'}">Register Component</a>
     </nav>
 
-    <main>
+    <main {{#if wideMode}}class="wide-mode"{{/if}}>
       <can-import from="canrocks/styles.css!" />
       <can-import from="canrocks/app" as="viewModel" />
       <can-import from="canrocks/routes" />

@@ -17,6 +17,11 @@ var AppViewModel = AppMap.extend({
     },
     page: {
       type: "string"
+    },
+    wideMode: {
+      get: function(){
+        return this.attr("page") === "components";
+      }
     }
   }
 });

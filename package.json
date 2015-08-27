@@ -45,7 +45,8 @@
       "compression",
       "xmlhttprequest",
       "body-parser",
-      "pdenodeify"
+      "pdenodeify",
+      "get-package-readme"
     ]
   },
   "canrocks": {
@@ -62,15 +63,18 @@
     "done-css": "^1.1.6",
     "express": "^4.13.3",
     "generator-donejs": "^0.2.9",
+    "get-package-readme": "^1.1.0",
     "highlight.js": "^8.7.0",
     "jquery": "^2.1.4",
     "lodash.some": "^3.2.3",
     "lowdb": "^0.10.2",
+    "marked": "^0.3.5",
     "npm": "^2.14.0",
     "pdenodeify": "^0.1.0",
     "steal": "^0.11.0-pre.6",
     "xmlhttprequest": "^1.7.0",
-    "yeoman-environment": "^1.2.7"
+    "yeoman-environment": "^1.2.7",
+    "gravatarjs": "^1.0.0"
   },
   "devDependencies": {
     "documentjs": "^0.3.0",

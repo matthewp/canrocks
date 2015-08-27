@@ -1,21 +1,49 @@
 <can-component tag="component-page">
   <style>
     component-page aside {
-      display: inline-block;
+    }
+    component-page component-model {
+      display: flex;
+    }
+    component-page aside {
+      flex: 1;
+      margin-right: 1em;
+    }
+    component-page .information {
+      flex: 2.5;
     }
   </style>
   <template>
     <can-import from="canrocks/models/component" />
+    <can-import from="canrocks/markdown/" />
 
     <component-model get="{name=packageName}">
       {{#isResolved}}
       <aside>
-        <pre><code class="bash">npm install {{value.name}} --save</code></pre>
+        <div class="installation">
+          <h2>Install</h2>
+          <pre><code class="bash">npm install {{value.name}} --save</code></pre>
+        </div>
+        <div class="maintainers">
+          {{#if maintainers.length}}
+          <h2>Maintainers</h2>
+
+          {{#each maintainers}}
+          <a href="{{npmPage}}" alt="{{npmPage}}">
+            <img src="{{gravatarUrl}}" alt="gravatar" />
+          </a>
+          {{/each}}
+          {{/if}}
+        </div>
       </aside>
       <div class="information">
-        {{value.name}}
+        <h1>{{value.name}}</h1>
 
-        {{value.description}}
+        {{#if value.readme}}
+        <markdown-content data="{value.readme}"></markdown-content>
+        {{else}}
+        <div>{{value.description}}</div>
+        {{/if}}
       </div>
       {{setComponent value}}
       {{/isResolved}}
@@ -23,6 +51,7 @@
   </template>
   <script type="view-model">
     var Map = require("can/map/");
+    var Maintainer = require("canrocks/models/maintainer");
     require("can/map/define/");
 
     module.exports = Map.extend({
@@ -32,6 +61,16 @@
         },
         component: {
           value: null
+        },
+        maintainers: {
+          value: Maintainer.List,
+          get: function(list){
+            var slug = this.attr("component.maintainers");
+            if(slug) {
+              list.replace(Maintainer.List.fromSlug(slug));
+            }
+            return list;
+          }
         }
       },
       setComponent: function(val){
@@ -41,6 +80,7 @@
   </script>
   <script type="events">
     var hl = require("canrocks/highlight");
+    var requestAnimationFrame = require("canrocks/raf");
 
     exports.componentChange = function(){
       var element = this.element;
