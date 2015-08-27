@@ -17,12 +17,18 @@
     <can-import from="canrocks/models/component" />
     <can-import from="canrocks/markdown/" />
 
-    <component-model get="{name=packageName}">
+    <component-model get="{name=packageName}" #pkg="{value}">
       {{#isResolved}}
       <aside>
         <div class="installation">
           <h2>Install</h2>
           <pre><code class="bash">npm install {{value.name}} --save</code></pre>
+        </div>
+        <div class="info">
+          <h2>Info</h2>
+          <p><strong>Version</strong> {{pkg.version}}</p>
+          <p><a href="{{pkg.homepage}}">{{pkg.homepage}}</a></p>
+          <p><strong>License</strong> {{pkg.license}}</p>
         </div>
         <div class="maintainers">
           {{#if maintainers.length}}
