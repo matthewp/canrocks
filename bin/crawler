@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+var crawl = require("../lib/crawl").crawlAll;
+crawl();

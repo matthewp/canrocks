@@ -1,4 +1,5 @@
 var Map = require("can/map/");
+var List = require("can/list/");
 require("can/map/define/");
 var gravatar = require("gravatarjs");
 
@@ -38,7 +39,7 @@ Maintainer.List = can.List.extend({
 }, {});
 
 Maintainer.List.fromSlug = function(slug){
-  var slugs = slug.split(",");
+  var slugs = (slug instanceof List) ? slug.attr() : [slug];
   var data = slugs.map(function(slug){
     return { slug: slug };
   });

@@ -27,6 +27,9 @@
         <div class="info">
           <h2>Info</h2>
           <p><strong>Version</strong> {{pkg.version}}</p>
+          {{#if pkg.dependencies.can}}
+          <p><strong>CanJS Version</strong> {{pkg.dependencies.can}}</p>
+          {{/if}}
           <p><a href="{{pkg.homepage}}">{{pkg.homepage}}</a></p>
           <p><strong>License</strong> {{pkg.license}}</p>
         </div>

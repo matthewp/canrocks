@@ -48,7 +48,7 @@
       {{/eq}}
     </main>
 
-    {{asset "inline-cache"}}
+
 
     {{#switch @env.NODE_ENV}}
       {{#case "production"}}

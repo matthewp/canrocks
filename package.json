@@ -39,14 +39,14 @@
       "yeoman-environment",
       "generator-donejs",
       "npm",
-      "lowdb",
       "lodash.some",
       "express",
       "compression",
       "xmlhttprequest",
       "body-parser",
       "pdenodeify",
-      "get-package-readme"
+      "get-package-readme",
+      "cradle"
     ]
   },
   "canrocks": {
@@ -58,12 +58,14 @@
     "can-connect": "^0.2.7",
     "can-ssr": "^0.5.5",
     "compression": "^1.5.2",
+    "cradle": "^0.6.9",
     "done-autorender": "^0.3.1",
     "done-component": "^0.1.0",
     "done-css": "^1.1.6",
     "express": "^4.13.3",
     "generator-donejs": "^0.2.9",
     "get-package-readme": "^1.1.0",
+    "gravatarjs": "^1.0.0",
     "highlight.js": "^8.7.0",
     "jquery": "^2.1.4",
     "lodash.some": "^3.2.3",
@@ -73,8 +75,7 @@
     "pdenodeify": "^0.1.0",
     "steal": "^0.11.0-pre.6",
     "xmlhttprequest": "^1.7.0",
-    "yeoman-environment": "^1.2.7",
-    "gravatarjs": "^1.0.0"
+    "yeoman-environment": "^1.2.7"
   },
   "devDependencies": {
     "documentjs": "^0.3.0",
