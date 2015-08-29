@@ -9,6 +9,13 @@
       <a can-href="{page='how-to'}">Help</a>
       <a can-href="{page='register'}">Register Component</a>
     </nav>
+    {{#if showBanner}}
+    <header class="banner">
+      <a can-href="{page='home'}">
+        <h1>{{siteName}}</h1>
+      </a>
+    </header>
+    {{/if}}
 
     <main {{#if wideMode}}class="wide-mode"{{/if}}>
       <can-import from="canrocks/styles.css!" />
@@ -17,9 +24,11 @@
       <can-import from="canrocks/loading.component!" />
       <can-import from="can/view/href/" />
 
+      {{^if showBanner}}
       <a can-href="{page='home'}">
         <h1>{{siteName}}</h1>
       </a>
+      {{/if}}
 
       {{#eq page "home"}}
         <can-import from="canrocks/home/home.component!" can-tag="loading">

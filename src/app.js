@@ -18,6 +18,11 @@ var AppViewModel = AppMap.extend({
     page: {
       type: "string"
     },
+    showBanner: {
+      get: function(){
+        return this.attr("page") !== "home";
+      }
+    },
     wideMode: {
       get: function(){
         return this.attr("page") === "components";

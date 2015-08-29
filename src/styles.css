@@ -41,3 +41,16 @@ a {
   color: #3FA369;
   text-decoration: none;
 }
+
+.banner {
+  background: rgba(0,0,0,0.08);
+  padding: 1.25em 1em;
+}
+
+.banner a {
+  color: #13723C;
+}
+
+.banner a h1 {
+  margin: 0;
+}
