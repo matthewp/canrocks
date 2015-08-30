@@ -1,0 +1,56 @@
+<can-component tag="search-form">
+  <template>
+    <form class="search-form" can-submit="doSearch">
+      <input class="search-term" type="text" placeholder="find components" can-value="{searchTerm}" />
+      <input class="submit-button" type="submit" />
+    </form>
+  </template>
+  <script type="view-model">
+    var Map = require("can/map/");
+    require("can/map/define/");
+
+    module.exports = Map.extend({
+      define: {
+        searchTerm: {
+          value: ""
+        }
+      },
+      doSearch: function() {
+        this.attr("@root").attr({
+          page: "search",
+          query: this.attr("searchTerm"),
+          package: undefined
+        });
+        return false;
+      }
+    });
+  </script>
+  <style>
+    search-form .search-form {
+      background: white;
+      border: 1px solid rgba(0,0,0,0.2);
+      display: inline-block;
+    }
+    search-form .search-form:hover {
+      border: 1px solid rgba(0,0,0,0.4);
+    }
+    search-form .search-term {
+      width: 20em;
+      height: 30px;
+      font-size: 18px;
+      padding: 5px;
+      outline: none;
+      border: 0;
+    }
+    search-form .submit-button {
+      height: 30px;
+      width: 49px;
+      outline: 0;
+      border: 0;
+      cursor: pointer;
+      background: url("../../images/ico-search.svg") no-repeat 50% 50%;
+      background-size: 16px 16px;
+      text-indent: -99999px;
+    }
+  </style>
+</can-component>

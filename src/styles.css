@@ -21,14 +21,18 @@ main.wide-mode {
   height: 38px;
   background: #3FA369;
   display: flex;
+  display: -webkit-flex;
   flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
   padding: 0 10em;
 }
 
 #page-nav a {
   color: rgba(255,255,255,0.8);
   display: flex;
+  display: -webkit-flex;
   align-items: center;
+  -webkit-align-items: center;
   padding: 0 0.5em;
 }
 
@@ -42,9 +46,14 @@ a {
   text-decoration: none;
 }
 
+/* <header class="banner"> */
 .banner {
   background: rgba(0,0,0,0.08);
   padding: 1.25em 1em;
+  display: flex;
+  display: -webkit-flex;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+  margin-bottom: 0.8em;
 }
 
 .banner a {
@@ -53,4 +62,9 @@ a {
 
 .banner a h1 {
   margin: 0;
+}
+
+.banner .logo {
+  flex: 1;
+  -webkit-flex: 1;
 }

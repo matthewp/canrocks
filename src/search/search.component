@@ -15,8 +15,8 @@
 
     <p class="search-info">results for: <span class="search-term">{{searchTerm}}</span></p>
 
-    {{#if query}}
-    <component-model get-list="{query=query}">
+    {{#if searchTerm}}
+    <component-model get-list="{query=searchTerm}">
       <component-list promise="{.}"></component-list>
       {{#if isResolved}}
         {{^if ./value.length}}

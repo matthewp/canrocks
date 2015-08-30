@@ -47,12 +47,18 @@
       "pdenodeify",
       "get-package-readme",
       "cradle"
-    ]
+    ],
+    "envs": {
+      "devlopment": {
+        "baseURL": "/"
+      }
+    }
   },
   "canrocks": {
     "database": "components.db"
   },
   "dependencies": {
+    "animate.css": "^3.4.0",
     "body-parser": "^1.13.3",
     "can": "^2.3.0-pre.8",
     "can-connect": "^0.2.7",

@@ -4,13 +4,16 @@
     }
     component-page component-model {
       display: flex;
+      display: -webkit-flex;
     }
     component-page aside {
       flex: 1;
+      -webkit-flex: 1;
       margin-right: 1em;
     }
     component-page .information {
       flex: 2.5;
+      -webkit-flex: 2.5;
     }
   </style>
   <template>

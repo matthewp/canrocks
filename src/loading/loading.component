@@ -1,0 +1,24 @@
+<can-component tag="loading">
+  <style>
+    .loading-wrapper {
+      min-height: 20em;
+      display: flex;
+      display: -webkit-flex;
+      justify-content: center;
+      -webkit-justify-content: center;
+      align-items: center;
+      -webkit-align-items: center;
+    }
+  </style>
+  <template>
+    <can-import from="animate.css/animate.css!" />
+
+    {{#eq state "resolved"}}
+      <content/>
+    {{else}}
+      <div class="loading-wrapper">
+        <h1 class="loading animated wobble infinite">Loading...</h1>
+      </div>
+    {{/eq}}
+  </template>
+</can-component>

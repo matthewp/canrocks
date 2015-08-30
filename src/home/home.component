@@ -2,16 +2,14 @@
   <template>
     <can-import from="canrocks/list/list.component!" />
     <can-import from="canrocks/models/component" />
+    <can-import from="canrocks/search-form/search-form.component!" />
 
     <section>
       <div class="site-description">
         <h4>Cataloging {{count}} of can.Components</h4>
       </div>
       <div class="form-content">
-        <form class="search-form" can-submit="doSearch">
-          <input class="search-term" type="text" placeholder="find components" can-value="{searchTerm}" />
-          <input class="submit-button" type="submit" />
-        </form>
+        <search-form></search-form>
       </div>
       <h1>Trending</h1>
 
@@ -26,19 +24,9 @@
 
     module.exports = Map.extend({
       define: {
-        searchTerm: {
-          value: ""
-        },
         count: {
           value: "thousands"
         }
-      },
-      doSearch: function() {
-        this.attr("@root").attr({
-          page: "search",
-          query: this.attr("searchTerm")
-        });
-        return false;
       }
     });
   </script>
@@ -53,33 +41,9 @@
     home-page .form-content,
     home-page .site-description {
       display: flex;
+      display: -webkit-flex;
       justify-content: center;
-    }
-    home-page .search-form {
-      background: white;
-      border: 1px solid rgba(0,0,0,0.2);
-      width: 58.5%;
-    }
-    home-page .search-form:hover {
-      border: 1px solid rgba(0,0,0,0.4);
-    }
-    home-page .search-term {
-      width: 20em;
-      height: 30px;
-      font-size: 18px;
-      padding: 5px;
-      outline: none;
-      border: 0;
-    }
-    home-page .submit-button {
-      height: 30px;
-      width: 49px;
-      outline: 0;
-      border: 0;
-      cursor: pointer;
-      background: url("../../images/ico-search.svg") no-repeat 50% 50%;
-      background-size: 16px 16px;
-      text-indent: -99999px;
+      -webkit-justify-content: center;
     }
     home-page section > h1 {
       text-align: center;

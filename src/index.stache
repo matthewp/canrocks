@@ -11,9 +11,14 @@
     </nav>
     {{#if showBanner}}
     <header class="banner">
-      <a can-href="{page='home'}">
-        <h1>{{siteName}}</h1>
-      </a>
+      <div class="logo">
+        <a can-href="{page='home'}">
+          <h1>{{siteName}}</h1>
+        </a>
+      </div>
+      <div class="search">
+        <search-form search-term="{query}"></search-form>
+      </div>
     </header>
     {{/if}}
 
@@ -21,7 +26,8 @@
       <can-import from="canrocks/styles.css!" />
       <can-import from="canrocks/app" as="viewModel" />
       <can-import from="canrocks/routes" />
-      <can-import from="canrocks/loading.component!" />
+      <can-import from="canrocks/loading/loading.component!" />
+      <can-import from="canrocks/search-form/search-form.component!" />
       <can-import from="can/view/href/" />
 
       {{^if showBanner}}
