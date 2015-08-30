@@ -6,6 +6,7 @@
   </head>
   <body>
     <nav id="page-nav">
+      <a href="https://github.com/matthewp/canrocks">GitHub</a>
       <a can-href="{page='how-to'}">Help</a>
       <a can-href="{page='register'}">Register Component</a>
     </nav>
