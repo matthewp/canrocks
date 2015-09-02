@@ -3,8 +3,15 @@
     <can-import from="canrocks/list/list.component!" />
     <can-import from="canrocks/models/component" />
     <can-import from="canrocks/search-form/search-form.component!" />
+    <can-import from="can/view/href/" />
 
     <section>
+      <div class="site-logo">
+        <a can-href="{page='home'}">
+          <h1 class="brand-name">{{siteName}}</h1>
+        </a>
+      </div>
+
       <div class="site-description">
         <h4>Cataloging {{count}} of can.Components</h4>
       </div>
@@ -39,7 +46,8 @@
       width: 100%;
     }
     home-page .form-content,
-    home-page .site-description {
+    home-page .site-description,
+    home-page .site-logo {
       display: flex;
       display: -webkit-flex;
       justify-content: center;

@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'alfa_slab_oneregular';
+    src: url('../fonts/alfaslabone-regular-webfont.eot');
+         url('../fonts/alfaslabone-regular-webfont.woff2') format('woff2'),
+         url('../fonts/alfaslabone-regular-webfont.woff') format('woff'),
+         url('../fonts/alfaslabone-regular-webfont.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html {
   background-color: #FEFFF8;
   color: #273C52;
@@ -7,6 +18,12 @@ body {
   font-family: "Helvetica Neue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   font-weight: 300;
   margin: 0;
+}
+
+.brand-name {
+  font-family: "alfa_slab_oneregular";
+  font-weight: normal;
+  font-size: 2.5em;
 }
 
 main {

@@ -14,7 +14,7 @@
     <header class="banner">
       <div class="logo">
         <a can-href="{page='home'}">
-          <h1>{{siteName}}</h1>
+          <h1 class="brand-name">{{siteName}}</h1>
         </a>
       </div>
       <div class="search">
@@ -30,12 +30,6 @@
       <can-import from="canrocks/loading/loading.component!" />
       <can-import from="canrocks/search-form/search-form.component!" />
       <can-import from="can/view/href/" />
-
-      {{^if showBanner}}
-      <a can-href="{page='home'}">
-        <h1>{{siteName}}</h1>
-      </a>
-      {{/if}}
 
       {{#eq page "home"}}
         <can-import from="canrocks/home/home.component!" can-tag="loading">
@@ -64,11 +58,14 @@
       {{/eq}}
     </main>
 
-
+    {{asset "inline-cache"}}
 
     {{#switch @env.NODE_ENV}}
       {{#case "production"}}
-        <script src="/node_modules/steal/steal.production.js"  main="canrocks/index.stache!done-autorender"></script>
+        <script src="http://canrocks.s3-website-us-east-1.amazonaws.com/dist/node_modules/steal/steal.production.js"  main="canrocks/index.stache!done-autorender"></script>
+      {{/case}}
+      {{#case "staging"}}
+        <script src="/node_modules/steal/steal.production.js" main="canrocks/index.stache!done-autorender"></script>
       {{/case}}
       {{#default}}
         <script src="/node_modules/steal/steal.js"></script>

@@ -24,6 +24,18 @@
     "canjs",
     "donejs"
   ],
+  "donejs": {
+    "deploy": {
+      "root": "dist",
+      "services": {
+        "production": {
+          "type": "s3",
+          "bucket": "canrocks",
+          "credentials": "../../.aws.s3.json"
+        }
+      }
+    }
+  },
   "system": {
     "main": "canrocks/index.stache!done-autorender",
     "directories": {
@@ -51,6 +63,28 @@
     "envs": {
       "devlopment": {
         "baseURL": "/"
+      },
+      "production": {
+        "baseURL": "http://canrocks.s3-website-us-east-1.amazonaws.com/dist/"
+      },
+      "server,build": {
+        "map": {
+          "can/util/vdom/vdom": "can/util/vdom/vdom"
+        },
+        "meta": {
+          "jquery": {
+            "format": "global",
+            "deps": ["can/util/vdom/vdom"]
+          }
+        }
+      }
+    },
+    "map": {
+      "can/util/vdom/vdom": "@empty"
+    },
+    "meta": {
+      "can/util/vdom/vdom": {
+        "sideBundle": true
       }
     }
   },
@@ -66,7 +100,7 @@
     "compression": "^1.5.2",
     "cradle": "^0.6.9",
     "done-autorender": "^0.3.1",
-    "done-component": "^0.1.0",
+    "done-component": "^0.2.0",
     "done-css": "^1.1.6",
     "express": "^4.13.3",
     "generator-donejs": "^0.2.9",
