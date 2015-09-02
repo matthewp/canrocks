@@ -21,7 +21,7 @@ body {
 }
 
 .brand-name {
-  font-family: "alfa_slab_oneregular";
+  font-family: "alfa_slab_oneregular", "helvetica";
   font-weight: normal;
   font-size: 2.5em;
 }

@@ -22,6 +22,7 @@ exports.Component = Component.extend({
       markdown = markdown.isComputed ? markdown() : markdown;
       var html = marked(markdown);
       var frag = can.frag(html);
+
       return frag;
     }
   }
