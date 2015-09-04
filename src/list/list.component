@@ -27,8 +27,14 @@
           </a>
           <h4>{{primaryOwner}}</h4>
         </header>
-        <div class="description">{{description}}</div>
+        {{#eq versionPosition "top"}}
         <div class="version">{{version}}</div>
+        {{/eq}}
+
+        <div class="description">{{description}}</div>
+        {{#eq versionPosition "bottom"}}
+        <div class="version">{{version}}</div>
+        {{/eq}}
       </li>
     {{/each}}
     </ul>
@@ -42,6 +48,9 @@
         limit: {
           type: "number",
           value: 5
+        },
+        versionPosition: {
+          value: "bottom"
         },
         promise: {
           value: null

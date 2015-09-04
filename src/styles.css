@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'alfa_slab_oneregular';
     src: url('../fonts/alfaslabone-regular-webfont.eot');
-         url('../fonts/alfaslabone-regular-webfont.woff2') format('woff2'),
+    src: url('../fonts/alfaslabone-regular-webfont.woff2') format('woff2'),
          url('../fonts/alfaslabone-regular-webfont.woff') format('woff'),
-         url('../fonts/alfaslabone-regular-webfont.ttf') format('truetype'),
+         url('../fonts/alfaslabone-regular-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -21,7 +21,7 @@ body {
 }
 
 .brand-name {
-  font-family: "alfa_slab_oneregular", "helvetica";
+  font-family: 'alfa_slab_oneregular', 'Helvetica Neue-Light', Helvetica, sans-serif;
   font-weight: normal;
   font-size: 2.5em;
 }

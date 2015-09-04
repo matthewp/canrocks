@@ -34,3 +34,12 @@ QUnit.test("Shows a no results message", function(){
   F("search-results").exists("component added to the page");
   F(".no-results").exists("The empty results message shown");
 });
+
+QUnit.test("Doesn't show the no results message if there are results", function(){
+  var frag = this.renderer({query:"all"});
+  this.append(frag);
+
+  F("search-results").exists("component has been added to the page");
+  F(".no-results").missing("there is no no-results message");
+  F(".component").size(3, "There are 3 components listed");
+});

@@ -61,30 +61,8 @@
       "cradle"
     ],
     "envs": {
-      "devlopment": {
-        "baseURL": "/"
-      },
       "production": {
         "baseURL": "http://canrocks.s3-website-us-east-1.amazonaws.com/dist/"
-      },
-      "server,build": {
-        "map": {
-          "can/util/vdom/vdom": "can/util/vdom/vdom"
-        },
-        "meta": {
-          "jquery": {
-            "format": "global",
-            "deps": ["can/util/vdom/vdom"]
-          }
-        }
-      }
-    },
-    "map": {
-      "can/util/vdom/vdom": "@empty"
-    },
-    "meta": {
-      "can/util/vdom/vdom": {
-        "sideBundle": true
       }
     }
   },
@@ -115,7 +93,8 @@
     "pdenodeify": "^0.1.0",
     "steal": "^0.11.0-pre.6",
     "xmlhttprequest": "^1.7.0",
-    "yeoman-environment": "^1.2.7"
+    "yeoman-environment": "^1.2.7",
+    "can-simple-dom": "git://github.com/canjs/can-simple-dom#classname"
   },
   "devDependencies": {
     "documentjs": "^0.3.0",

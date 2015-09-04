@@ -18,14 +18,14 @@
     {{#if searchTerm}}
     <component-model get-list="{query=searchTerm}">
       <component-list promise="{.}"></component-list>
-      {{#if isResolved}}
-        {{^if ./value.length}}
+      {{#isResolved}}
+        {{^if ../value.length}}
           <div class="no-results">
             <p>No results found for <strong>{{query}}</strong> :(</p>
             <p>Maybe you should <a can-href="{page='how-to'}">Submit a component</a>?</p>
           </div>
         {{/if}}
-      {{/if}}
+      {{/isResolved}}
     </component-model>
     {{/if}}
   </template>

@@ -9,3 +9,7 @@ var ports = { 8080: true, 3030: true };
 if(env === "development" && !ports[location.port]) {
   route.defaultBinding = "hashchange";
 }
+
+route.bind("package", function(){
+  console.log("package changed");
+});
