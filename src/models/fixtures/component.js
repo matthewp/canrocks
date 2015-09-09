@@ -6,21 +6,33 @@ var store = fixture.store([{
   description: "A basic tabs component",
   "dist-tags": {
     "latest": "0.1.0"
-  }
+  },
+  type: "component"
 }, {
   name: 'bit-grid',
   owners: ["matthewp"],
   description: "A set of components for grids",
   "dist-tags": {
     "latest": "0.5.0"
-  }
+  },
+  type: "component"
 }, {
   name: "can-lorem-ipsum",
   owners: ["matthewp"],
   description: "A can.Component for lorem ipsum text",
   "dist-tags": {
     "latest": "1.0.0"
-  }
+  },
+  type: "component"
+}, {
+  name: "can-interrupt",
+  owners: ["joe-crick"],
+  description: "Pause or cancel changes on a map and route",
+  "dist-tags": {
+    "latest": "0.1.2"
+  },
+  type: "plugin"
+
 }], function(item, req){
   var query = req.data.query;
   if(query === "all") return true;

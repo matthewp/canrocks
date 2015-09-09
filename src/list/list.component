@@ -4,9 +4,27 @@
       list-style-type: none;
       padding-left: 0;
     }
+    component-list .component header {
+      display: flex;
+      display: -webkit-flex;
+    }
     component-list .component header h1,
     component-list .component header h4 {
       display: inline-block;
+    }
+    component-list .component hgroup,
+    component-list .component type-badge {
+      flex: 1;
+      -webkit-flex: 1;
+    }
+    component-list .component type-badge {
+      margin-top: 1.33em;
+      display: flex;
+      display: -webkit-flex;
+      justify-content: flex-end;
+      -webkit-justify-content: flex-end;
+      align-items: flex-start;
+      -webkit-align-items: flex-start;
     }
     component-list .component-name {
       margin-right: 15px;
@@ -17,15 +35,22 @@
   </style>
   <template>
     <can-import from="can/view/href/" />
+    <can-import from="canrocks/type-badge/type-badge.component!" />
 
     <ul class="components">
     {{#each promise.value}}
       <li class="component">
         <header>
+          <hgroup>
           <a can-href="{page='components', package=name}" class="component-name">
             <h1>{{name}}</h1>
           </a>
           <h4>{{primaryOwner}}</h4>
+          </hgroup>
+
+          {{#if type}}
+            <type-badge type="{type}"></type-badge>
+          {{/if}}
         </header>
         {{#eq versionPosition "top"}}
         <div class="version">{{version}}</div>
