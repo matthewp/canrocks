@@ -13,7 +13,7 @@
     "start": "node lib/main",
     "can-serve": "can-serve --port 8080",
     "live-reload": "steal-tools live-reload",
-    "develop": "npm start & npm run live-reload",
+    "develop": "bin/develop.js",
     "document": "documentjs"
   },
   "main": "canrocks/index.stache!done-autorender",
@@ -41,9 +41,6 @@
     "directories": {
       "lib": "src"
     },
-    "configDependencies": [
-      "live-reload"
-    ],
     "npmIgnore": [
       "documentjs",
       "testee",
