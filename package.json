@@ -9,7 +9,7 @@
     "url": ""
   },
   "scripts": {
-    "test": "testee test.html --browsers firefox --reporter Spec --root http://localhost:8080",
+    "test": "testee test.html --browsers firefox --reporter Spec",
     "start": "node lib/main",
     "can-serve": "can-serve --port 8080",
     "live-reload": "steal-tools live-reload",

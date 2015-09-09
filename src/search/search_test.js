@@ -4,6 +4,7 @@ var F = require("funcunit");
 var stache = require("can/view/stache/");
 var $ = require("jquery");
 require("canrocks/models/fixtures/");
+var AppMap = require("can-ssr/app-map");
 
 F.attach(QUnit);
 
@@ -16,11 +17,14 @@ QUnit.module("search-results", {
     this.append = function(frag){
       $("#qunit-test-area").html(frag);
     };
+  },
+  teardown: function(){
+    $("#qunit-test-area").empty();
   }
 });
 
 QUnit.test("Shows the search results info", function(){
-  var frag = this.renderer({query:"all"});
+  var frag = this.renderer(new AppMap({query:"all"}));
   this.append(frag);
 
   F("search-results").exists();
@@ -28,7 +32,7 @@ QUnit.test("Shows the search results info", function(){
 });
 
 QUnit.test("Shows a no results message", function(){
-  var frag = this.renderer({query:"react"});
+  var frag = this.renderer(new AppMap({query:"react"}));
   this.append(frag);
 
   F("search-results").exists("component added to the page");
@@ -36,10 +40,10 @@ QUnit.test("Shows a no results message", function(){
 });
 
 QUnit.test("Doesn't show the no results message if there are results", function(){
-  var frag = this.renderer({query:"all"});
+  var frag = this.renderer(new AppMap({query:"all"}));
   this.append(frag);
 
   F("search-results").exists("component has been added to the page");
   F(".no-results").missing("there is no no-results message");
-  F(".component").size(3, "There are 3 components listed");
+  F("li.component").size(3, "There are 3 components listed");
 });
