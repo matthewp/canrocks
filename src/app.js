@@ -9,7 +9,7 @@ var AppViewModel = AppMap.extend({
       serialize: false
     },
     title: {
-      value: 'canjs.rocks',
+      value: '',
       serialize: false
     },
     query: {

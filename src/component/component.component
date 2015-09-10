@@ -102,8 +102,15 @@
       requestAnimationFrame(function(){
         hl.highlightChildren(element);
       });
+
+      this.setTitle();
     };
 
     exports["{viewModel} component"] = "componentChange";
+
+    exports.setTitle = function(){
+      var vm = this.viewModel;
+      vm.attr("@root").attr("title", vm.attr("component.name"));
+    };
   </script>
 </can-component>

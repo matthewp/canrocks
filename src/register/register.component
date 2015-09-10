@@ -57,4 +57,10 @@
       }
     });
   </script>
+  <script type="events">
+    exports.inserted = "setTitle";
+    exports.setTitle = function(){
+      this.viewModel.attr("@root").attr("title", "Register component");
+    };
+  </script>
 </can-component>
