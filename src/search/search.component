@@ -28,4 +28,12 @@
     {{/if}}
   </template>
   <view-model from="canrocks/search/search"></view-model>
+  <script type="events">
+    exports.inserted = exports["{viewModel} searchTerm"] = "setTitle";
+
+    exports.setTitle = function(promise){
+      var vm = this.viewModel;
+      vm.attr("@root").attr("title", "search for " + vm.attr("searchTerm"));
+    };
+  </script>
 </can-component>

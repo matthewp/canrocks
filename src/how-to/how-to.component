@@ -36,6 +36,11 @@
 
     exports.inserted = function(){
       hl.highlightChildren(this.element);
+      this.setTitle();
+    };
+
+    exports.setTitle = function(){
+      this.viewModel.attr("@root").attr("title", "Using");
     };
   </script>
 </can-component>

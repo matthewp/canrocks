@@ -47,6 +47,11 @@
       }
     });
   </script>
+  <script type="events">
+    exports.inserted = function(){
+      this.viewModel.attr("@root").attr("title", "Home");
+    };
+  </script>
   <style>
     home-page {
       display: flex;
