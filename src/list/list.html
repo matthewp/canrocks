@@ -1,14 +1,22 @@
 <title>&lt;component-list&gt;</title>
-<script type="text/stache" can-autorender>
+<script id="app-template" type="text/stache" can-autorender>
   <can-import from="canrocks/models/fixtures/" />
   <can-import from="canrocks/list/list.component!" />
-  <can-import from="canrocks/styles.less!" />
+  <can-import from="canrocks/styles.css!" />
   <div id="app">
-    <component-list></component-list>
+    <component-list promise="{promise}"></component-list>
   </div>
 </script>
 <script src="../../node_modules/steal/steal.js" live-reload="false"
         main="can/view/autorender/">
+
+  require("canrocks/models/fixtures/");
+  var Component = require("canrocks/models/component").Component;
+  var $ = require("jquery");
+
+  var vm = $("#app-template").viewModel();
+  var promise = Component.getList({});
+  vm.attr("promise", promise);
 </script>
 <style>
   #app {

@@ -45,5 +45,5 @@ QUnit.test("Doesn't show the no results message if there are results", function(
 
   F("search-results").exists("component has been added to the page");
   F(".no-results").missing("there is no no-results message");
-  F("li.component").size(3, "There are 3 components listed");
+  F("li.component").size(4, "There are 4 components listed");
 });
