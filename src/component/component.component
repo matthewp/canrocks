@@ -71,9 +71,6 @@
         packageName: {
           type: "string"
         },
-        get: function(){
-
-        },
         component: {
           value: null
         },
@@ -98,12 +95,32 @@
     var requestAnimationFrame = require("canrocks/raf");
 
     exports.componentChange = function(){
+      this.checkType();
+
+      //Highlighting
       var element = this.element;
       requestAnimationFrame(function(){
         hl.highlightChildren(element);
       });
 
       this.setTitle();
+    };
+
+    // Verify that we are on a correct page and if not set the status code
+    // appropriately.
+    exports.checkType = function(){
+      var viewModel = this.viewModel;
+      var component = viewModel.attr("component");
+      var root = viewModel.attr("@root");
+      var page = root.attr("page");
+      var correctPage = component.attr("type") + "s";
+      if(correctPage !== page) {
+        root.attr({
+          page: correctPage,
+          statusCode: 301
+        });
+
+      }
     };
 
     exports["{viewModel} component"] = "componentChange";

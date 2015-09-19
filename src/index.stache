@@ -41,11 +41,11 @@
           <search-results search-term="{query}"></search-results>
         </can-import>
       {{/eq}}
-      {{#eq page "components"}}
+      {{#if isPluginPage}}
         <can-import from="canrocks/component/component.component!" can-tag="loading">
           <component-page package-name="{package}"></component-page>
         </can-import>
-      {{/eq}}
+      {{/if}}
       {{#eq page "how-to"}}
         <can-import from="canrocks/how-to/how-to.component!" can-tag="loading">
           <how-to></how-to>

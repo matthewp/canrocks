@@ -42,7 +42,7 @@
       <li class="component">
         <header>
           <hgroup>
-          <a can-href="{page='components', package=name}" class="component-name">
+          <a can-href="{page=typePlural, package=name}" class="component-name">
             <h1>{{name}}</h1>
           </a>
           <h4>{{primaryOwner}}</h4>
