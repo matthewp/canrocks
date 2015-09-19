@@ -56,6 +56,10 @@
           <register-component><register-component>
         </can-import>
       {{/eq}}
+
+      {{#eq statusCode 404}}
+        <div>Oops, couldn't find what you're looking for.</div>
+      {{/eq}}
     </main>
 
     {{asset "inline-cache"}}
