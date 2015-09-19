@@ -6,12 +6,20 @@ var pages = [
   "home",
   "search",
   "components",
+  "plugins",
+  "attributes",
   "how-to",
   "register"
 ].reduce(function(pages, page){
   pages[page] = true;
   return pages;
 }, {});
+
+var pluginPages = {
+  "components": true,
+  "attributes": true,
+  "plugins": true
+};
 
 var AppViewModel = AppMap.extend({
   define: {
@@ -44,7 +52,13 @@ var AppViewModel = AppMap.extend({
     },
     wideMode: {
       get: function(){
-        return this.attr("page") === "components";
+        return this.attr("isPluginPage");
+      }
+    },
+    isPluginPage: {
+      get: function(){
+        var page = this.attr("page");
+        return !!pluginPages[page];
       }
     },
     statusCode: {
@@ -59,5 +73,7 @@ var AppViewModel = AppMap.extend({
     }
   }
 });
+
+AppViewModel.pluginPages = pluginPages;
 
 module.exports = AppViewModel;

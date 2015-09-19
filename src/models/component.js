@@ -15,6 +15,11 @@ var Component = exports.Component = can.Map.extend({
         this.attr("primaryOwner", val.attr(0));
         return val;
       }
+    },
+    typePlural: {
+      get: function(){
+        return (this.attr("type") || "plugin") + "s";
+      }
     }
   }
 });
