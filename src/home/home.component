@@ -89,5 +89,15 @@
       border-top: 2px solid #273C52;
       padding: 0.8em 0;
     }
+
+    home-page .component type-badge {
+      flex: 0.5 !important;
+      -webkit-flex: 0.5 !important;
+    }
+
+    home-page type-badge .badge {
+      height: auto;
+      border-top: none;
+    }
   </style>
 </can-component>
