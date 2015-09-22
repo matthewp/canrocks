@@ -90,8 +90,7 @@
     "pdenodeify": "^0.1.0",
     "steal": "^0.11.0-pre.6",
     "xmlhttprequest": "^1.7.0",
-    "yeoman-environment": "^1.2.7",
-    "can-simple-dom": "git://github.com/canjs/can-simple-dom#classname"
+    "yeoman-environment": "^1.2.7"
   },
   "devDependencies": {
     "documentjs": "^0.3.0",
