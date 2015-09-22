@@ -1,7 +1,18 @@
 language: node_js
 script: npm test
 node_js:
-  - "0.12"
+- '0.12'
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+- openssl aes-256-cbc -K $encrypted_183dece04d47_key -iv $encrypted_183dece04d47_iv
+  -in key.priv.enc -out key.priv -d
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+before_deploy:
+  node build
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: bin/deploy.sh
+env:
+  global:
+    secure: VECjYM3mLDDTZFp7TXcp5hpIsFRpxcRW4n4TtF5hSaT7zBAptHd+k+H+XUNDl+g8ZtY05veeh7i4eYtuXlm1A1vloMvhajF70WCa6prR+0SPj0BGPZYkQN+AXEowQfiIOpPnCxRqn3rvNscOZOyWDIz8s8rg9obPSkLu4JT1VcN250x7vtlyUi19VUiOVQs7E8yIF2uZ920JoV11OKxt9MumDYKeBtXUNf2fxacCjXE2v0FOuQJ2rEolEjotiEWco66Y88CVmHvp0CHm4+9MPny88j7KQNZi6TE4z/Zhoti1o13SEF7ThVEAK+ZlTKIvDscOblyEtjDF/QT1uhViQLxLmorO0ClcluXJfFaaasRjWxawESPL4pdqEEf3vNR5BFb3ckPe9WlGySKBgD27SZIAeZP20wBIc1S2UCN66qiRm0+Ujlt11PdPiv0Qso8teRQGjRM9fkDGBxdPKeWTwfacQgIDyF+DlnURZec0DUv2jf5lvPADAqNHfnELocg0F5tPpx45cqIAoxQPV2kbfIwZsj/ntcdlhsWIik8w1d3L5JqVixrQLRpSLv5h0X8hd0afadkPSBaOBUnKmROWtT6rZEsy6ozxn9NBFl8nT/IqQBAax0D2XYsa6SoBRyKP2c/jvP/Rjjz48vAp34DwP1dx8dk5o9yuxpYZtlIjhMQ=
