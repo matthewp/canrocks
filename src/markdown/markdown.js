@@ -20,6 +20,7 @@ exports.Component = Component.extend({
   helpers: {
     "2html": function(markdown){
       markdown = markdown.isComputed ? markdown() : markdown;
+      if(!markdown) return markdown;
       var html = marked(markdown);
       var frag = can.frag(html);
 

@@ -1,10 +1,10 @@
-import QUnit from 'steal-qunit';
-import { ViewModel } from './markdown';
+var QUnit = require("steal-qunit");
+var ViewModel = require("./markdown").ViewModel;
+var stache = require("can/view/stache/");
 
-// ViewModel unit tests
-QUnit.module('markdown');
+QUnit.module("<markdown-content>");
 
-QUnit.test('Has message', function(){
-  var vm = new ViewModel();
-  QUnit.equal(vm.attr('message'), 'This is the markdown-content component');
+QUnit.test("can handle no markdown content", function(){
+  var template = stache("<markdown-content data='{md}'></markdown-content>");
+  ok(template(), "the template did not throw with undefined markdown");
 });
