@@ -55,7 +55,7 @@
       "body-parser",
       "pdenodeify",
       "get-package-readme",
-      "cradle"
+      "cloudant"
     ],
     "envs": {
       "production": {
@@ -72,8 +72,8 @@
     "can": "^2.3.0-pre.8",
     "can-connect": "^0.2.7",
     "can-ssr": "^0.6.0",
+    "cloudant": "^1.3.0",
     "compression": "^1.5.2",
-    "cradle": "^0.6.9",
     "done-autorender": "^0.4.1",
     "done-component": "^0.2.0",
     "done-css": "^1.1.6",
