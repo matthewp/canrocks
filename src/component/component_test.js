@@ -78,3 +78,27 @@ QUnit.test("doesn't redirect when the page is correct", function(){
     QUnit.equal(state.attr("page"), "components", "page did not change");
   });
 });
+
+QUnit.module("<component-page> redirection with no type", {
+  setup: function(){
+    this.state = new State({
+      page: "components",
+      package: "some-plugin"
+    });
+    var template = stache("<component-page package-name='{package}'></component-page>");
+    $("#qunit-test-area").html(template(this.state));
+  },
+  teardown: function(){
+    $("#qunit-test-area").empty();
+  }
+});
+
+QUnit.test("redirects to 'other'", function(){
+  F(".information").exists("component was loaded and rendered");
+
+  var state = this.state;
+  F(function(){
+    QUnit.equal(state.attr("statusCode"), 301, "Status code set to redirect");
+    QUnit.equal(state.attr("page"), "other", "Page was changed to the correct page");
+  });
+});
