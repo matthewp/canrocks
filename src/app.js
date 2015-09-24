@@ -8,6 +8,7 @@ var pages = [
   "components",
   "plugins",
   "attributes",
+  "other",
   "how-to",
   "register"
 ].reduce(function(pages, page){
@@ -18,7 +19,8 @@ var pages = [
 var pluginPages = {
   "components": true,
   "attributes": true,
-  "plugins": true
+  "plugins": true,
+  "other": true
 };
 
 var AppViewModel = AppMap.extend({

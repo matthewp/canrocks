@@ -11,11 +11,6 @@ F.attach(QUnit);
 // ViewModel unit tests
 QUnit.module('list');
 
-QUnit.skip('Has message', function(){
-  var vm = new ViewModel();
-  QUnit.equal(vm.attr('message'), 'This is the component-list component');
-});
-
 // Component tests
 QUnit.module("<component-list>", {
   setup: function(){
@@ -39,4 +34,9 @@ QUnit.test("It has the correct link according to the type of plugin", function()
   this.dfd.resolve(components);
 
   F(".component-name").attr("href", /page=plugins/, "Correct link for the type of plugin");
+
+  F(function(){
+    components.attr(0).removeAttr("type");
+  });
+  F(".component-name").attr("href", /page=other/, "Correct link for the other type");
 });

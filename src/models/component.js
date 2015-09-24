@@ -18,7 +18,11 @@ var Component = exports.Component = can.Map.extend({
     },
     typePlural: {
       get: function(){
-        return (this.attr("type") || "plugin") + "s";
+        var type = this.attr("type");
+        if(type) {
+          return type + "s";
+        }
+        return "other";
       }
     }
   }

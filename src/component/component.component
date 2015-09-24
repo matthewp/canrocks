@@ -113,7 +113,8 @@
       var component = viewModel.attr("component");
       var root = viewModel.attr("@root");
       var page = root.attr("page");
-      var correctPage = component.attr("type") + "s";
+      var type = component.attr("type");
+      var correctPage = type ? type + "s" : "other";
       if(correctPage !== page) {
         root.attr({
           page: correctPage,
