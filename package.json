@@ -14,7 +14,8 @@
     "can-serve": "can-serve --port 8080",
     "live-reload": "steal-tools live-reload",
     "develop": "bin/develop.js",
-    "document": "documentjs"
+    "document": "documentjs",
+    "build": "node build"
   },
   "main": "canrocks/index.stache!done-autorender",
   "files": [
@@ -55,7 +56,8 @@
       "body-parser",
       "pdenodeify",
       "get-package-readme",
-      "cloudant"
+      "cloudant",
+      "heapdump"
     ],
     "envs": {
       "production": {
@@ -81,6 +83,7 @@
     "generator-donejs": "^0.2.9",
     "get-package-readme": "^1.1.0",
     "gravatarjs": "^1.0.0",
+    "heapdump": "^0.3.7",
     "highlight.js": "^8.7.0",
     "jquery": "^2.1.4",
     "lodash.some": "^3.2.3",
