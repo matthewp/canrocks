@@ -9,7 +9,9 @@
     "url": ""
   },
   "scripts": {
-    "test": "testee test.html --browsers firefox --reporter Spec",
+    "test:node": "node lib/test | tap-spec",
+    "test:browser": "testee test.html --browsers firefox --reporter Spec",
+    "test": "npm run test:node && npm run test:browser",
     "start": "node lib/main",
     "can-serve": "can-serve --port 8080",
     "live-reload": "steal-tools live-reload",
@@ -57,7 +59,9 @@
       "pdenodeify",
       "get-package-readme",
       "cloudant",
-      "heapdump"
+      "heapdump",
+      "tape",
+      "tap-spec"
     ],
     "envs": {
       "production": {
@@ -101,6 +105,8 @@
     "funcunit": "^3.0.0",
     "steal-qunit": "^0.1.1",
     "steal-tools": "^0.11.0-pre.9",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.1",
     "testee": "^0.2.0"
   }
 }
