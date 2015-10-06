@@ -1,0 +1,3 @@
+<can-import from="can/view/href/" />
+
+Limit a search to a type of plugin by including a <strong>+</strong> and the plugin type like: <a can-href="{page='search', query='tabs +component'}">tabs +component</a> to search only for components. Types are: <a can-href="{page='search', query='+component'}">component</a>, <a can-href="{page='search', query='+attribute'}">attribute</a>, and <a can-href="{page='search', query='+plugin'}">plugin</a>.
