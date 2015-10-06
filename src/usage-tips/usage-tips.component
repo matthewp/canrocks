@@ -1,0 +1,39 @@
+<can-component tag="usage-tips">
+  <style>
+    usage-tips {
+      display: inline;
+      text-align: center;
+      font-size: 90%;
+    }
+  </style>
+  <template>
+    {{chosenTip}}
+  </template>
+  <script type="view-model">
+    var tips = [
+      require("canrocks/usage-tips/tips/type-search.stache!")
+    ];
+
+    var Map = require("can/map/");
+    require("can/map/define/");
+
+    module.exports = Map.extend({
+      define: {
+        tipNumber: {
+          type: "number",
+          // random by default.
+          value: function() {
+            return Math.floor(Math.random()*tips.length);
+          }
+        },
+        chosenTip: {
+          get: function(){
+            var tmpl = tips[this.attr("tipNumber")];
+            var root = this.attr("@root");
+            return tmpl(root);
+          }
+        }
+      }
+    });
+  </script>
+</can-component>

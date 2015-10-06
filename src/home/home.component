@@ -1,5 +1,6 @@
 <can-component tag="home-page">
   <template>
+    <can-import from="canrocks/usage-tips/usage-tips.component!" />
     <can-import from="canrocks/list/list.component!" />
     <can-import from="canrocks/models/component" />
     <can-import from="canrocks/search-form/search-form.component!" />
@@ -17,6 +18,10 @@
       </div>
       <div class="form-content">
         <search-form></search-form>
+      </div>
+
+      <div class="site-tip">
+        <usage-tips></usage-tips>
       </div>
 
       <div class="lists">
@@ -70,7 +75,7 @@
     }
     home-page .component-list-title {
       text-align: center;
-      margin-top: 4em;
+      margin-top: 2em;
     }
     home-page .lists {
       display: flex;
@@ -98,6 +103,15 @@
     home-page type-badge .badge {
       height: auto;
       border-top: none;
+    }
+
+    home-page .site-tip {
+      margin-top: 2em;
+    }
+
+    home-page usage-tips {
+      display: inline-block;
+      padding: 0 10em;
     }
   </style>
 </can-component>
