@@ -64,7 +64,7 @@
 
     {{asset "inline-cache"}}
 
-    {{#switch @env.NODE_ENV}}
+    {{#switch env.NODE_ENV}}
       {{#case "production"}}
         <script src="http://canrocks.s3-website-us-east-1.amazonaws.com/dist/node_modules/steal/steal.production.js"  main="canrocks/index.stache!done-autorender"></script>
       {{/case}}
