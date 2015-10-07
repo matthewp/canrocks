@@ -11,8 +11,7 @@
   </template>
   <script type="view-model">
     var tips = [
-      require("canrocks/usage-tips/tips/type-search.stache!"),
-      require("canrocks/usage-tips/tips/contribute.stache!")
+      require("canrocks/usage-tips/tips/type-search.stache!")
     ];
 
     var Map = require("can/map/");
