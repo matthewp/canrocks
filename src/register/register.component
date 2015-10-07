@@ -1,9 +1,12 @@
 <can-component tag="register-component">
   <template>
+    <can-import from="can/view/href/"/>
+
     <h1>Register your component</h1>
-    <p>If you haven't already, please publish your component to <a href="https://www.npmjs.com/">npm</a>. Doing so should cause your component to show up on the site within a few hours. If it doesn't please fill out the below form and it should appear immediately.</p>
+    <p>If you haven't already, please publish your component to <a href="https://www.npmjs.com/">npm</a> and include the keyword <strong>canjs</strong>. Doing so should cause your component to show up on the site within a few hours. If it doesn't please fill out the below form and it should appear immediately. Learn more on the <a can-href="{page='how-to'}">help page</a></p>
     {{^if saved}}
     <form class="register-form" can-submit="register">
+      <div class="form-elements">
       <label for="package" {{#if error}}class="error"{{/if}}>
       <input type="text" name="package" can-value="packageName" placeholder="package name" />
       </label>
@@ -11,6 +14,7 @@
         <span class="error-message">{{error}}</span>
       {{/if}}
       <input type="submit" value="Submit" />
+      </div>
     </form>
     {{else}}
       <div class="submitted">Thanks for submitting <strong>{{packageName}}</strong>! It should appear on the site shortly.</div>
@@ -63,4 +67,22 @@
       this.viewModel.attr("@root").attr("title", "Register component");
     };
   </script>
+  <style>
+    register-component input {
+      font-size: 120%;
+    }
+
+    register-component input[type=submit] {
+      font-size: 120%;
+      border: 1px solid #f7f8f1;
+      background: #fff;
+    }
+
+    register-component form {
+      display: flex;
+      display: -webkit-flex;
+      justify-content: center;
+      -webkit-justify-content: center;
+    }
+  </style>
 </can-component>
