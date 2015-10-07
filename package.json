@@ -33,8 +33,7 @@
       "services": {
         "production": {
           "type": "s3",
-          "bucket": "canrocks",
-          "credentials": "../../.aws.s3.json"
+          "bucket": "canrocks"
         }
       }
     }
@@ -59,7 +58,6 @@
       "pdenodeify",
       "get-package-readme",
       "cloudant",
-      "heapdump",
       "tape",
       "tap-spec"
     ],
@@ -87,7 +85,6 @@
     "generator-donejs": "^0.2.9",
     "get-package-readme": "^1.1.0",
     "gravatarjs": "^1.0.0",
-    "heapdump": "^0.3.7",
     "highlight.js": "^8.7.0",
     "jquery": "^2.1.4",
     "lodash.some": "^3.2.3",
@@ -101,7 +98,7 @@
   },
   "devDependencies": {
     "documentjs": "^0.3.0",
-    "donejs-deploy": "^0.1.5",
+    "donejs-deploy": "^0.2.0",
     "funcunit": "^3.0.0",
     "steal-qunit": "^0.1.1",
     "steal-tools": "^0.11.0-pre.9",
