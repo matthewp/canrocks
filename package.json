@@ -63,7 +63,7 @@
     ],
     "envs": {
       "production": {
-        "baseURL": "http://canrocks.s3-website-us-east-1.amazonaws.com/dist/"
+        "baseURL": "http://canrocks.s3-website-us-east-1.amazonaws.com/"
       }
     }
   },

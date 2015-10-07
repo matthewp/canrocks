@@ -66,7 +66,7 @@
 
     {{#switch @env.NODE_ENV}}
       {{#case "production"}}
-        <script src="http://canrocks.s3-website-us-east-1.amazonaws.com/dist/node_modules/steal/steal.production.js"  main="canrocks/index.stache!done-autorender"></script>
+        <script src="http://canrocks.s3-website-us-east-1.amazonaws.com/node_modules/steal/steal.production.js"  main="canrocks/index.stache!done-autorender"></script>
       {{/case}}
       {{#case "staging"}}
         <script src="/node_modules/steal/steal.production.js" main="canrocks/index.stache!done-autorender"></script>
