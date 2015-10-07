@@ -1,5 +1,28 @@
 <can-component tag="how-to">
   <style>
+    how-to .keywords {
+      display: flex;
+      display: -webkit-flex;
+      justify-content: center;
+      -webkit-justify-content: center;
+      margin: 2em 0;
+    }
+
+    how-to .keywords h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    how-to table th,
+    how-to table td {
+      font-size: 130%;
+    }
+
+    how-to table td {
+      padding: 0 1em 0.2em 1em;
+      text-align: center;
+      border-bottom: 1px solid #3f3f3f;
+    }
   </style>
   <template>
     <can-import from="can/view/href/" />
@@ -14,18 +37,51 @@
 
 &lt;lorem-ipsum times="50"&gt;&lt;/lorem-ipsum&gt;</code></pre>
 
-    <h1>How to contribute</h1>
-    <p>Our database is built by crawling <a href="https://www.npmjs.com">npm</a> for packages with the keywords <strong><code>can-component</code></strong> or <strong><code>cancomponent</code></strong>.</p>
-    <p>So the best way to contribute is by submitting can.Components to npm, it's easy to do. First create a project with a component; let's say it is in <code>tabs.js</code>, you would make your package.json look like this:</p>
+    <h1 id="contribute">How to contribute</h1>
+    <p>Our database is built by crawling <a href="https://www.npmjs.com">npm</a> for packages with the keyword <strong><code>canjs</code></strong>.</p>
+    <p>So the best way to contribute is by submitting your components, can.view.attrs, and other plugins to npm; it's easy to do. First create a project with a component; let's say it is in <code>tabs.js</code>, you would make your package.json look like this:</p>
     <pre><code class="json">{
   "name": "my-tabs",
   "version": "1.0.0",
   "main": "tabs.js",
   "keywords": [
+    "canjs"
     "can-component"
   ],
   ...
 }</code></pre>
+  <p>In order to show the correct badge for your component the follow keywords are looked for:</p>
+  <div id="keywords" class="keywords">
+    <div>
+    <h2>Keywords</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Attribute</th>
+          <th>Plugin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>can-component</td>
+          <td>can.view.attr</td>
+          <td>can-plugin</td>
+        </tr>
+        <tr>
+          <td>cancomponent</td>
+          <td>can-attribute</td>
+          <td>plugin</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>attribute</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
   <p>You should use source control like <a href="https://github.com/">GitHub</a> and do good practices like testing and Continuous Integration. Once your project is ready to be shared simply type:</p>
   <pre><code class="bash">npm publish</code></pre>
   <p>canjs.rocks crawls npm every few hours and picks up new packages that were published. If you don't want to wait that long you can go to the <a can-href="{page='register'}">register page</a> to notify us of your package and it should be added to our database immediately.</p>
