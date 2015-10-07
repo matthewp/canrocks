@@ -33,8 +33,7 @@
       "services": {
         "production": {
           "type": "s3",
-          "bucket": "canrocks",
-          "credentials": "../../.aws.s3.json"
+          "bucket": "canrocks"
         }
       }
     }
@@ -99,7 +98,7 @@
   },
   "devDependencies": {
     "documentjs": "^0.3.0",
-    "donejs-deploy": "^0.1.5",
+    "donejs-deploy": "^0.2.0",
     "funcunit": "^3.0.0",
     "steal-qunit": "^0.1.1",
     "steal-tools": "^0.11.0-pre.9",
