@@ -1,5 +1,5 @@
 var QUnit = require('steal-qunit');
-var ViewModel = require('./list.component!').ViewModel;
+var ViewModel = require('./list.component').ViewModel;
 var F = require("funcunit");
 var $ = require("jquery");
 var can = require("can");

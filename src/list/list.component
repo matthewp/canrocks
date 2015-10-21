@@ -35,7 +35,7 @@
   </style>
   <template>
     <can-import from="can/view/href/" />
-    <can-import from="canrocks/type-badge/type-badge.component!" />
+    <can-import from="canrocks/type-badge/type-badge.component" />
 
     <ul class="components">
     {{#each promise.value}}

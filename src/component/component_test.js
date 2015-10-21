@@ -1,5 +1,5 @@
 var QUnit = require("steal-qunit");
-var ViewModel = require("./component.component!").ViewModel;
+var ViewModel = require("./component.component").ViewModel;
 var State = require("canrocks/app");
 require("canrocks/models/fixtures/");
 var $ = require("jquery");

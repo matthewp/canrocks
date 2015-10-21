@@ -19,7 +19,7 @@ module.exports = Map.extend({
             query: this.attr("searchTerm")
           };
           var promise = Component.getList(params);
-          return this.attr("@root").pageData("component", params, promise);
+          return this.attr("%root").pageData("component", params, promise);
         }
       }
     }

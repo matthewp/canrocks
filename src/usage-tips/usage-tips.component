@@ -29,7 +29,7 @@
         chosenTip: {
           get: function(){
             var tmpl = tips[this.attr("tipNumber")];
-            var root = this.attr("@root");
+            var root = this.attr("%root");
             return tmpl(root);
           }
         }

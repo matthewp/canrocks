@@ -1,5 +1,5 @@
 var QUnit = require('steal-qunit');
-var ViewModel = require('./search.component!').ViewModel;
+var ViewModel = require('./search.component').ViewModel;
 var F = require("funcunit");
 var stache = require("can/view/stache/");
 var $ = require("jquery");

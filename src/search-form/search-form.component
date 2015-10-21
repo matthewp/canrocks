@@ -16,7 +16,7 @@
         }
       },
       doSearch: function() {
-        this.attr("@root").attr({
+        this.attr("%root").attr({
           page: "search",
           query: this.attr("searchTerm"),
           package: undefined

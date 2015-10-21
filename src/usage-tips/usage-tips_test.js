@@ -1,5 +1,5 @@
 var QUnit = require("steal-qunit");
-var ViewModel = require("./usage-tips.component!").ViewModel;
+var ViewModel = require("./usage-tips.component").ViewModel;
 var $ = require("jquery");
 var F = require("funcunit");
 var stache = require("can/view/stache/");

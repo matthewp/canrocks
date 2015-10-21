@@ -1,14 +1,14 @@
 <can-component tag="home-page">
   <template>
-    <can-import from="canrocks/usage-tips/usage-tips.component!" />
-    <can-import from="canrocks/list/list.component!" />
+    <can-import from="canrocks/usage-tips/usage-tips.component" />
+    <can-import from="canrocks/list/list.component" />
     <can-import from="canrocks/models/component" />
-    <can-import from="canrocks/search-form/search-form.component!" />
+    <can-import from="canrocks/search-form/search-form.component" />
     <can-import from="can/view/href/" />
 
     <section>
       <div class="site-logo">
-        <a can-href="{page='home'}">
+        <a href="{{routeUrl page='home'}}">
           <h1 class="brand-name">{{siteName}}</h1>
         </a>
       </div>
@@ -54,7 +54,7 @@
   </script>
   <script type="events">
     exports.inserted = function(){
-      this.viewModel.attr("@root").attr("title", "Home");
+      this.viewModel.attr("%root").attr("title", "Home");
     };
   </script>
   <style>
