@@ -17,7 +17,10 @@ QUnit.module("<search-form>", {
 });
 
 QUnit.test("Updates the searchTerm property on the root viewModel", function(){
-  F(".search-term").exists().type("canjs").blur();
+  F(".search-term").exists().type("canjs");
+  F(function(){
+    $(".search-term").blur();
+  });
   F(".submit-button").click();
 
   var root = this.root;

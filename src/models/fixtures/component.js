@@ -1,4 +1,4 @@
-var fixture = require("can-connect/fixture/");
+var fixture = require("can-fixture");
 
 var store = fixture.store([{
   id: "bit-tabs",
