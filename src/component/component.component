@@ -111,7 +111,7 @@
     exports.checkType = function(){
       var viewModel = this.viewModel;
       var component = viewModel.attr("component");
-      var root = viewModel.attr("@root");
+      var root = viewModel.attr("%root");
       var page = root.attr("page");
       var type = component.attr("type");
       var correctPage = type ? type + "s" : "other";
@@ -128,7 +128,7 @@
 
     exports.setTitle = function(){
       var vm = this.viewModel;
-      vm.attr("@root").attr("title", vm.attr("component.name"));
+      vm.attr("%root").attr("title", vm.attr("component.name"));
     };
   </script>
 </can-component>

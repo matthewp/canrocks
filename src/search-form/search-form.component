@@ -1,6 +1,6 @@
 <can-component tag="search-form">
   <template>
-    <form class="search-form" can-submit="doSearch">
+    <form class="search-form" ($submit)="doSearch()">
       <input class="search-term" type="text" placeholder="find components" can-value="{searchTerm}" />
       <input class="submit-button" type="submit" />
     </form>
@@ -16,7 +16,7 @@
         }
       },
       doSearch: function() {
-        this.attr("@root").attr({
+        this.attr("%root").attr({
           page: "search",
           query: this.attr("searchTerm"),
           package: undefined

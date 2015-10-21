@@ -1,58 +1,57 @@
 <html>
   <head>
     <title>{{title}} | canjs.rocks</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     {{asset "css"}}
   </head>
   <body>
     <nav id="page-nav">
       <a href="https://github.com/matthewp/canrocks">GitHub</a>
-      <a can-href="{page='how-to'}">Help</a>
-      <a can-href="{page='register'}">Register Component</a>
+      <a href="{{routeUrl page='how-to'}}">Help</a>
+      <a href="{{routeUrl page='register'}}">Register Component</a>
     </nav>
     {{#if showBanner}}
     <header class="banner">
       <div class="logo">
-        <a can-href="{page='home'}">
+        <a href="{{routeUrl page='home'}}">
           <h1 class="brand-name">{{siteName}}</h1>
         </a>
       </div>
       <div class="search">
-        <search-form search-term="{query}"></search-form>
+        <search-form {(search-term)}="query"></search-form>
       </div>
     </header>
     {{/if}}
 
     <main {{#if wideMode}}class="wide-mode"{{/if}}>
-      <can-import from="canrocks/styles.css!" />
-      <can-import from="canrocks/app" as="viewModel" />
+      <can-import from="canrocks/styles.css" />
+      <can-import from="canrocks/app" export-as="viewModel" />
       <can-import from="canrocks/routes" />
-      <can-import from="canrocks/loading/loading.component!" />
-      <can-import from="canrocks/search-form/search-form.component!" />
+      <can-import from="canrocks/loading/loading.component" />
+      <can-import from="canrocks/search-form/search-form.component" />
       <can-import from="can/view/href/" />
 
       {{#eq page "home"}}
-        <can-import from="canrocks/home/home.component!" can-tag="loading">
+        <can-import from="canrocks/home/home.component" can-tag="loading">
           <home-page></home-page>
         </can-import>
       {{/eq}}
       {{#eq page "search"}}
-        <can-import from="canrocks/search/search.component!" can-tag="loading">
-          <search-results search-term="{query}"></search-results>
+        <can-import from="canrocks/search/search.component" can-tag="loading">
+          <search-results {(search-term)}="query"></search-results>
         </can-import>
       {{/eq}}
       {{#if isPluginPage}}
-        <can-import from="canrocks/component/component.component!" can-tag="loading">
-          <component-page package-name="{package}"></component-page>
+        <can-import from="canrocks/component/component.component" can-tag="loading">
+          <component-page {(package-name)}="package"></component-page>
         </can-import>
       {{/if}}
       {{#eq page "how-to"}}
-        <can-import from="canrocks/how-to/how-to.component!" can-tag="loading">
+        <can-import from="canrocks/how-to/how-to.component" can-tag="loading">
           <how-to></how-to>
         </can-import>
       {{/eq}}
       {{#eq page "register"}}
-        <can-import from="canrocks/register/register.component!" can-tag="loading">
+        <can-import from="canrocks/register/register.component" can-tag="loading">
           <register-component><register-component>
         </can-import>
       {{/eq}}
@@ -64,7 +63,7 @@
 
     {{asset "inline-cache"}}
 
-    {{#switch @env.NODE_ENV}}
+    {{#switch env.NODE_ENV}}
       {{#case "production"}}
         <script src="http://d3f5udpht229yo.cloudfront.net/node_modules/steal/steal.production.js" main="canrocks/index.stache!done-autorender"></script>
       {{/case}}

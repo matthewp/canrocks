@@ -96,7 +96,7 @@
     };
 
     exports.setTitle = function(){
-      this.viewModel.attr("@root").attr("title", "Using");
+      this.viewModel.attr("%root").attr("title", "Using");
     };
   </script>
 </can-component>

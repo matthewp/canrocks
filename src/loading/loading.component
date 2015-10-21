@@ -11,7 +11,7 @@
     }
   </style>
   <template>
-    <can-import from="animate.css/animate.css!" />
+    <can-import from="animate.css/animate.css" />
 
     {{#eq state "resolved"}}
       <content/>

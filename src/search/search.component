@@ -9,7 +9,7 @@
     }
   </style>
   <template>
-    <can-import from="canrocks/list/list.component!" />
+    <can-import from="canrocks/list/list.component" />
     <can-import from="canrocks/models/component" />
     <can-import from="can/view/href/" />
 
@@ -33,7 +33,7 @@
 
     exports.setTitle = function(promise){
       var vm = this.viewModel;
-      vm.attr("@root").attr("title", "search for " + vm.attr("searchTerm"));
+      vm.attr("%root").attr("title", "search for " + vm.attr("searchTerm"));
     };
   </script>
 </can-component>
