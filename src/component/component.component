@@ -20,7 +20,7 @@
     <can-import from="canrocks/models/component" />
     <can-import from="canrocks/markdown/" />
 
-    <component-model get="{name=packageName}">
+    <component-model get="{name=packageName}" {^value}="component">
       {{#isResolved}}
       <aside>
         <div class="installation">
@@ -52,12 +52,11 @@
         <h1>{{value.name}}</h1>
 
         {{#if value.readme}}
-        <markdown-content data="{value.readme}"></markdown-content>
+        <markdown-content {data}="value.readme"></markdown-content>
         {{else}}
         <div>{{value.description}}</div>
         {{/if}}
       </div>
-      {{setComponent value}}
       {{/isResolved}}
     </component-model>
   </template>
@@ -84,9 +83,6 @@
             return list;
           }
         }
-      },
-      setComponent: function(val){
-        this.attr("component", val.isComputed ? val() : val);
       }
     });
   </script>
@@ -94,8 +90,9 @@
     var hl = require("canrocks/highlight");
     var requestAnimationFrame = require("canrocks/raf");
 
-    exports.componentChange = function(){
-      this.checkType();
+    exports.componentChange = function(scope, ev, component){
+      if(component)
+        this.checkType();
 
       //Highlighting
       var element = this.element;
