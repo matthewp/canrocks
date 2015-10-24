@@ -83,9 +83,6 @@
             return list;
           }
         }
-      },
-      setComponent: function(val){
-        //this.attr("component", val.isComputed ? val() : val);
       }
     });
   </script>
