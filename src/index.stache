@@ -17,7 +17,7 @@
         </a>
       </div>
       <div class="search">
-        <search-form {(search-term)}="query"></search-form>
+        <search-form {search-term}="query"></search-form>
       </div>
     </header>
     {{/if}}
@@ -37,12 +37,12 @@
       {{/eq}}
       {{#eq page "search"}}
         <can-import from="canrocks/search/search.component" can-tag="loading">
-          <search-results {(search-term)}="query"></search-results>
+          <search-results {search-term}="query"></search-results>
         </can-import>
       {{/eq}}
       {{#if isPluginPage}}
         <can-import from="canrocks/component/component.component" can-tag="loading">
-          <component-page {(package-name)}="package"></component-page>
+          <component-page {package-name}="package"></component-page>
         </can-import>
       {{/if}}
       {{#eq page "how-to"}}
