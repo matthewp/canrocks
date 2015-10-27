@@ -99,6 +99,7 @@
   "devDependencies": {
     "can-fixture": "0.0.1",
     "documentjs": "^0.3.0",
+    "donejs-cli": "^0.5.2",
     "donejs-deploy": "^0.2.0",
     "funcunit": "^3.0.0",
     "steal-qunit": "^0.1.1",
