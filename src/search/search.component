@@ -16,15 +16,13 @@
     <p class="search-info">results for: <span class="search-term">{{searchTerm}}</span></p>
 
     {{#if searchTerm}}
-      <component-list promise="{componentPromise}"></component-list>
-      {{#componentPromise.isResolved}}
-        {{^if componentPromise.value.length}}
-          <div class="no-results">
-            <p>No results found for <strong>{{query}}</strong> :(</p>
-            <p>Maybe you should <a can-href="{page='how-to'}">Submit a component</a>?</p>
-          </div>
-        {{/if}}
-      {{/componentPromise.isResolved}}
+      <component-list {promise}="componentPromise"></component-list>
+      {{#if hasNoResults}}
+        <div class="no-results">
+          <p>No results found for <strong>{{query}}</strong> :(</p>
+          <p>Maybe you should <a can-href="{page='how-to'}">Submit a component</a>?</p>
+        </div>
+      {{/if}}
     {{/if}}
   </template>
   <view-model from="canrocks/search/search"></view-model>

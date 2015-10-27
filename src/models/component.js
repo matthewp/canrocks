@@ -1,5 +1,5 @@
 var can = require("can");
-var superMap = require("can-connect/can/super-map/");
+var superMap = require("canrocks/behaviors/super-map");
 var tag = require("can-connect/can/tag/");
 require("can/map/define/");
 
