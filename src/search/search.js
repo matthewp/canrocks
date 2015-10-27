@@ -22,6 +22,19 @@ module.exports = Map.extend({
           return this.attr("%root").pageData("component", params, promise);
         }
       }
+    },
+    hasNoResults: {
+      type: "boolean",
+      get: function(val, setVal){
+        var promise = this.attr("componentPromise");
+        if(promise) {
+          promise.then(function(l){
+            setVal(!l.attr("length"));
+          });
+          return;
+        }
+        setVal(false);
+      }
     }
   }
 });
