@@ -47,6 +47,7 @@
       "documentjs",
       "testee",
       "donejs-deploy",
+      "donejs-cli",
       "yeoman-environment",
       "generator-donejs",
       "npm",
