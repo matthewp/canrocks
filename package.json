@@ -64,7 +64,7 @@
     ],
     "envs": {
       "production": {
-        "baseURL": "http://d3f5udpht229yo.cloudfront.net/"
+        "baseURL": "https://d3f5udpht229yo.cloudfront.net/"
       }
     }
   },
