@@ -127,5 +127,17 @@
       var vm = this.viewModel;
       vm.attr("%root").attr("title", vm.attr("component.name"));
     };
+
+    exports["{viewModel} component"] = "removeTitle";
+
+    // Remove the title from the markdown section so that there isn't
+    // duplicate titles; one from our template and one from the markdown
+    exports.removeTitle = function(){
+      var component = this.viewModel.attr("component");
+      if(component) {
+        var id = "#" + component.attr("name");
+        this.element.find(id).remove();
+      }
+    }
   </script>
 </can-component>
