@@ -76,9 +76,9 @@
         maintainers: {
           value: Maintainer.List,
           get: function(list){
-            var slug = this.attr("component.maintainers");
-            if(slug) {
-              list.replace(Maintainer.List.fromSlug(slug));
+            var maintainers = this.attr("component.maintainers");
+            if(maintainers) {
+              list.replace(maintainers.attr());
             }
             return list;
           }

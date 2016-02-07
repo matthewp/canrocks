@@ -14,7 +14,7 @@ QUnit.module('<component-page> email/gravatar', {
     this.vm = new ViewModel({
       packageName: "testPackage",
       component: {
-        maintainers: "matthewp <matthew@matthewphillips.info>"
+        maintainers: {username: "matthewp", email: "matthew@matthewphillips.info" }
       }
     });
   }

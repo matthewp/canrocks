@@ -5,11 +5,11 @@ require("can/map/define/");
 
 var Component = exports.Component = can.Map.extend({
   define: {
-    version: {
+    /*version: {
       get: function(){
         return this.attr("dist-tags.latest") || this.attr("versions");
       }
-    },
+    },*/
     owners: {
       set: function(val){
         this.attr("primaryOwner", val.attr(0));
