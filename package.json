@@ -43,7 +43,6 @@
     "directories": {
       "lib": "src"
     },
-    "npmAlgorithm": "flat",
     "npmIgnore": [
       "documentjs",
       "testee",
