@@ -1,5 +1,5 @@
 language: node_js
-script: npm test
+script: npm run test:node
 node_js:
 - '0.12'
 before_install:
