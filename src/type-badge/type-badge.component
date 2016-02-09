@@ -16,6 +16,9 @@
     type-badge .attribute {
       background: #d9534f;
     }
+    type-badge .helper {
+      background: #5cb85c;
+    }
   </style>
   <template>
     <span class="badge {{type}}">{{type}}</span>

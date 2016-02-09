@@ -88,7 +88,7 @@
   </script>
   <script type="events">
     var hl = require("canrocks/highlight");
-    var requestAnimationFrame = require("canrocks/raf");
+    var getRaf = require("canrocks/raf");
 
     exports.componentChange = function(scope, ev, component){
       if(component)
@@ -96,7 +96,8 @@
 
       //Highlighting
       var element = this.element;
-      requestAnimationFrame(function(){
+      var rAF = getRaf();
+      rAF(function(){
         hl.highlightChildren(element);
       });
 

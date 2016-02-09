@@ -26,7 +26,7 @@ var store = fixture.store([{
   "dist-tags": {
     "latest": "1.0.0"
   },
-  type: "component"
+  type: "attribute"
 }, {
   id: "can-interrupt",
   name: "can-interrupt",
@@ -44,6 +44,15 @@ var store = fixture.store([{
   "dist-tags": {
     "latest": "0.1.2"
   }
+}, {
+  id: "account-helpers",
+  name: "account-helpers",
+  owners: ["marshall"],
+  description: "Helpers for accounting",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "type": "helper"
 }], function(item, req){
   var query = req.data.query;
   if(query === "all") return true;

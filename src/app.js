@@ -20,6 +20,7 @@ var pluginPages = {
   "components": true,
   "attributes": true,
   "plugins": true,
+  "helpers": true,
   "other": true
 };
 

@@ -1,1 +1,4 @@
-module.exports = typeof requestAnimationFrame !== "undefined" ? requestAnimationFrame : setTimeout;
+module.exports = function(){
+  return typeof requestAnimationFrame !== "undefined" ?
+    requestAnimationFrame : setTimeout;
+};
