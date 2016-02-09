@@ -40,3 +40,18 @@ QUnit.test("It has the correct link according to the type of plugin", function()
   });
   F(".component-name").attr("href", /page=other/, "Correct link for the other type");
 });
+
+QUnit.test("Helpers type is supported", function(){
+  var components = new Component.List([
+    {type: "helper", name: "some-package"}
+  ]);
+
+  this.dfd.resolve(components);
+
+  F(".component-name").attr("href", /page=helpers/, "Correct link for the type of plugin");
+
+  F(function(){
+    components.attr(0).removeAttr("type");
+  });
+  F(".component-name").attr("href", /page=other/, "Correct link for the other type");
+});
