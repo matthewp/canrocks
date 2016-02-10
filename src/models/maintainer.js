@@ -8,17 +8,6 @@ var emailExp = /<(.+)>/;
 
 var Maintainer = module.exports = Map.extend({
   define: {
-    slug: {
-      set: function(val){
-        var name = nameExp.exec(val)[1];
-        var email = emailExp.exec(val)[1];
-        this.attr({
-          username: name,
-          email: email
-        });
-        return val;
-      }
-    },
     gravatarUrl: {
       get: function(){
         var email = this.attr("email");
@@ -30,6 +19,11 @@ var Maintainer = module.exports = Map.extend({
         var name = this.attr("username");
         return name ? ("https://www.npmjs.com/~" + name) : undefined;
       }
+    },
+    username: {
+      get: function(){
+        return this.attr("name");
+      }
     }
   }
 });
@@ -37,11 +31,3 @@ var Maintainer = module.exports = Map.extend({
 Maintainer.List = can.List.extend({
   Map: Maintainer
 }, {});
-
-Maintainer.List.fromSlug = function(slug){
-  var slugs = (slug instanceof List) ? slug.attr() : [slug];
-  var data = slugs.map(function(slug){
-    return { slug: slug };
-  });
-  return new Maintainer.List(data);
-};
