@@ -1,4 +1,6 @@
 #!/usr/bin/env node
 
 var crawl = require("../lib/crawl").crawlAll;
-crawl();
+crawl().then(function(){
+  process.exit(0);
+});

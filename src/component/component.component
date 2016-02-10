@@ -78,6 +78,7 @@
           get: function(list){
             var maintainers = this.attr("component.maintainers");
             if(maintainers) {
+              debugger;
               list.replace(maintainers.attr());
             }
             return list;

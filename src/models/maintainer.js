@@ -19,6 +19,11 @@ var Maintainer = module.exports = Map.extend({
         var name = this.attr("username");
         return name ? ("https://www.npmjs.com/~" + name) : undefined;
       }
+    },
+    username: {
+      get: function(){
+        return this.attr("name");
+      }
     }
   }
 });
