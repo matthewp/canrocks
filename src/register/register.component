@@ -3,23 +3,7 @@
     <can-import from="can/view/href/"/>
 
     <h1>Register your component</h1>
-    <p>If you haven't already, please publish your component to <a href="https://www.npmjs.com/">npm</a> and include the keyword <strong>canjs</strong>. Doing so should cause your component to show up on the site within a few hours. If it doesn't please fill out the below form and it should appear immediately. Learn more on the <a can-href="{page='how-to'}">help page</a></p>
-    {{^if saved}}
-    <form class="register-form" can-submit="register">
-      <div class="form-elements">
-      <label for="package" {{#if error}}class="error"{{/if}}>
-      <input type="text" name="package" can-value="packageName" placeholder="package name" />
-      </label>
-      {{#if error}}
-        <span class="error-message">{{error}}</span>
-      {{/if}}
-      <input type="submit" value="Submit" />
-      </div>
-    </form>
-    {{else}}
-      <div class="submitted">Thanks for submitting <strong>{{packageName}}</strong>! It should appear on the site shortly.</div>
-      <div><a href="javascript://" can-click="reset">Submit another?</a></div>
-    {{/if}}
+    <p>If you haven't already, please publish your component to <a href="https://www.npmjs.com/">npm</a> and include the keyword <strong>canjs</strong>. Doing so should cause your component to show up on the site within a few hours. Learn more on the <a can-href="{page='how-to'}">help page</a></p>
   </template>
   <script type="view-model">
     var Map = require("can/map/");
