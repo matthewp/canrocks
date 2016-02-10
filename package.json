@@ -83,6 +83,7 @@
     "done-component": "^0.4.0",
     "done-css": "^1.1.13",
     "express": "^4.13.3",
+    "follow": "^0.12.1",
     "generator-donejs": "^0.6.0",
     "get-email-address-from-npm-username": "^1.1.0",
     "get-package-readme": "^1.1.0",
